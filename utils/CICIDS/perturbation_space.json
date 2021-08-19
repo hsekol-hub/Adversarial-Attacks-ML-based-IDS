@@ -1,0 +1,2338 @@
+{
+    "Benign": {
+        "FlowDuration": [
+            "discrete",
+            -12,
+            119999976
+        ],
+        "TotalFwdPackets": [
+            "discrete",
+            1,
+            214125
+        ],
+        "TotalBackwardPackets": [
+            "discrete",
+            0,
+            283900
+        ],
+        "TotalLengthofFwdPackets": [
+            "discrete",
+            0,
+            1267983
+        ],
+        "TotalLengthofBwdPackets": [
+            "discrete",
+            0,
+            629600565
+        ],
+        "FwdPacketLengthMax": [
+            "discrete",
+            0,
+            24820
+        ],
+        "FwdPacketLengthMin": [
+            "discrete",
+            0,
+            2293
+        ],
+        "FwdPacketLengthStd": [
+            "continuous",
+            0.0,
+            5796.50069
+        ],
+        "BwdPacketLengthMax": [
+            "discrete",
+            0,
+            14480
+        ],
+        "BwdPacketLengthMin": [
+            "discrete",
+            0,
+            2042
+        ],
+        "BwdPacketLengthStd": [
+            "continuous",
+            0.0,
+            3433.501973
+        ],
+        "FlowIATMean": [
+            "continuous",
+            -12.0,
+            120000000.0
+        ],
+        "FlowIATStd": [
+            "continuous",
+            0.0,
+            84751949.2026901
+        ],
+        "FlowIATMax": [
+            "discrete",
+            -12,
+            120000000
+        ],
+        "FlowIATMin": [
+            "discrete",
+            -13,
+            120000000
+        ],
+        "FwdIATTotal": [
+            "discrete",
+            0,
+            120000000
+        ],
+        "FwdIATMean": [
+            "continuous",
+            0.0,
+            120000000.0
+        ],
+        "FwdIATStd": [
+            "continuous",
+            0.0,
+            83200000.0
+        ],
+        "FwdIATMax": [
+            "discrete",
+            0,
+            120000000
+        ],
+        "FwdIATMin": [
+            "discrete",
+            0,
+            120000000
+        ],
+        "BwdIATTotal": [
+            "discrete",
+            0,
+            120000000
+        ],
+        "BwdIATMean": [
+            "continuous",
+            0.0,
+            120000000.0
+        ],
+        "BwdIATStd": [
+            "continuous",
+            0.0,
+            83300000.0
+        ],
+        "BwdIATMax": [
+            "discrete",
+            0,
+            120000000
+        ],
+        "BwdIATMin": [
+            "discrete",
+            0,
+            120000000
+        ],
+        "FwdPSHFlags": [
+            "discrete",
+            0,
+            1
+        ],
+        "FwdURGFlags": [
+            "discrete",
+            0,
+            1
+        ],
+        "FwdHeaderLength": [
+            "discrete",
+            -6442447920,
+            4524100
+        ],
+        "BwdHeaderLength": [
+            "discrete",
+            -1073741320,
+            5678000
+        ],
+        "PacketLengthMean": [
+            "continuous",
+            0.0,
+            2595.555556
+        ],
+        "PacketLengthStd": [
+            "continuous",
+            0.0,
+            4380.487987
+        ],
+        "PacketLengthVariance": [
+            "continuous",
+            0.0,
+            19200000.0
+        ],
+        "FINFlagCount": [
+            "discrete",
+            0,
+            1
+        ],
+        "SYNFlagCount": [
+            "discrete",
+            0,
+            1
+        ],
+        "RSTFlagCount": [
+            "discrete",
+            0,
+            1
+        ],
+        "PSHFlagCount": [
+            "discrete",
+            0,
+            1
+        ],
+        "ACKFlagCount": [
+            "discrete",
+            0,
+            1
+        ],
+        "URGFlagCount": [
+            "discrete",
+            0,
+            1
+        ],
+        "CWEFlagCount": [
+            "discrete",
+            0,
+            1
+        ],
+        "ECEFlagCount": [
+            "discrete",
+            0,
+            1
+        ],
+        "Down/UpRatio": [
+            "discrete",
+            0,
+            156
+        ],
+        "AveragePacketSize": [
+            "continuous",
+            0.0,
+            3050.0
+        ],
+        "SubflowFwdPackets": [
+            "discrete",
+            1,
+            214125
+        ],
+        "SubflowFwdBytes": [
+            "discrete",
+            0,
+            1267983
+        ],
+        "SubflowBwdPackets": [
+            "discrete",
+            0,
+            283900
+        ],
+        "SubflowBwdBytes": [
+            "discrete",
+            0,
+            629600565
+        ],
+        "Init_Win_bytes_forward": [
+            "discrete",
+            -1,
+            65535
+        ],
+        "Init_Win_bytes_backward": [
+            "discrete",
+            -1,
+            65535
+        ],
+        "act_data_pkt_fwd": [
+            "discrete",
+            0,
+            204290
+        ],
+        "min_seg_size_forward": [
+            "discrete",
+            -536870660,
+            93
+        ],
+        "ActiveMean": [
+            "continuous",
+            0.0,
+            85900000.0
+        ],
+        "ActiveStd": [
+            "continuous",
+            0.0,
+            74200000.0
+        ],
+        "ActiveMax": [
+            "discrete",
+            0,
+            105000000
+        ],
+        "ActiveMin": [
+            "discrete",
+            0,
+            85900000
+        ],
+        "IdleMean": [
+            "continuous",
+            0.0,
+            120000000.0
+        ],
+        "IdleStd": [
+            "continuous",
+            0.0,
+            76900000.0
+        ],
+        "IdleMax": [
+            "discrete",
+            0,
+            120000000
+        ],
+        "IdleMin": [
+            "discrete",
+            0,
+            120000000
+        ]
+    },
+    "Bot": {
+        "FlowDuration": [
+            "discrete",
+            1,
+            60202640
+        ],
+        "TotalFwdPackets": [
+            "discrete",
+            1,
+            32
+        ],
+        "TotalBackwardPackets": [
+            "discrete",
+            1,
+            70
+        ],
+        "TotalLengthofFwdPackets": [
+            "discrete",
+            0,
+            163981
+        ],
+        "TotalLengthofBwdPackets": [
+            "discrete",
+            0,
+            536
+        ],
+        "FwdPacketLengthMax": [
+            "discrete",
+            0,
+            23360
+        ],
+        "FwdPacketLengthMin": [
+            "discrete",
+            0,
+            6
+        ],
+        "FwdPacketLengthStd": [
+            "continuous",
+            0.0,
+            5176.370059
+        ],
+        "BwdPacketLengthMax": [
+            "discrete",
+            0,
+            256
+        ],
+        "BwdPacketLengthMin": [
+            "discrete",
+            0,
+            6
+        ],
+        "BwdPacketLengthStd": [
+            "continuous",
+            0.0,
+            85.33333333
+        ],
+        "FlowIATMean": [
+            "continuous",
+            1.0,
+            3541331.765
+        ],
+        "FlowIATStd": [
+            "continuous",
+            0.0,
+            4901981.331
+        ],
+        "FlowIATMax": [
+            "discrete",
+            1,
+            10200000
+        ],
+        "FlowIATMin": [
+            "discrete",
+            0,
+            50856
+        ],
+        "FwdIATTotal": [
+            "discrete",
+            0,
+            51200000
+        ],
+        "FwdIATMean": [
+            "continuous",
+            0.0,
+            6396441.875
+        ],
+        "FwdIATStd": [
+            "continuous",
+            0.0,
+            5268489.909
+        ],
+        "FwdIATMax": [
+            "discrete",
+            0,
+            10200000
+        ],
+        "FwdIATMin": [
+            "discrete",
+            0,
+            528942
+        ],
+        "BwdIATTotal": [
+            "discrete",
+            0,
+            60200000
+        ],
+        "BwdIATMean": [
+            "continuous",
+            0.0,
+            7518953.625
+        ],
+        "BwdIATStd": [
+            "continuous",
+            0.0,
+            4645137.318
+        ],
+        "BwdIATMax": [
+            "discrete",
+            0,
+            10300000
+        ],
+        "BwdIATMin": [
+            "discrete",
+            0,
+            528168
+        ],
+        "FwdPSHFlags": [
+            "discrete",
+            0,
+            0
+        ],
+        "FwdURGFlags": [
+            "discrete",
+            0,
+            0
+        ],
+        "FwdHeaderLength": [
+            "discrete",
+            20,
+            652
+        ],
+        "BwdHeaderLength": [
+            "discrete",
+            20,
+            1412
+        ],
+        "PacketLengthMean": [
+            "continuous",
+            0.0,
+            1599.847826
+        ],
+        "PacketLengthStd": [
+            "continuous",
+            0.0,
+            3725.033204
+        ],
+        "PacketLengthVariance": [
+            "continuous",
+            0.0,
+            13900000.0
+        ],
+        "FINFlagCount": [
+            "discrete",
+            0,
+            0
+        ],
+        "SYNFlagCount": [
+            "discrete",
+            0,
+            0
+        ],
+        "RSTFlagCount": [
+            "discrete",
+            0,
+            0
+        ],
+        "PSHFlagCount": [
+            "discrete",
+            0,
+            1
+        ],
+        "ACKFlagCount": [
+            "discrete",
+            0,
+            1
+        ],
+        "URGFlagCount": [
+            "discrete",
+            0,
+            1
+        ],
+        "CWEFlagCount": [
+            "discrete",
+            0,
+            0
+        ],
+        "ECEFlagCount": [
+            "discrete",
+            0,
+            0
+        ],
+        "Down/UpRatio": [
+            "discrete",
+            0,
+            2
+        ],
+        "AveragePacketSize": [
+            "continuous",
+            0.0,
+            1617.428571
+        ],
+        "SubflowFwdPackets": [
+            "discrete",
+            1,
+            32
+        ],
+        "SubflowFwdBytes": [
+            "discrete",
+            0,
+            163981
+        ],
+        "SubflowBwdPackets": [
+            "discrete",
+            1,
+            70
+        ],
+        "SubflowBwdBytes": [
+            "discrete",
+            0,
+            536
+        ],
+        "Init_Win_bytes_forward": [
+            "discrete",
+            237,
+            29200
+        ],
+        "Init_Win_bytes_backward": [
+            "discrete",
+            0,
+            16393
+        ],
+        "act_data_pkt_fwd": [
+            "discrete",
+            0,
+            31
+        ],
+        "min_seg_size_forward": [
+            "discrete",
+            20,
+            32
+        ],
+        "ActiveMean": [
+            "continuous",
+            0.0,
+            63678.2
+        ],
+        "ActiveStd": [
+            "continuous",
+            0.0,
+            22252.53596
+        ],
+        "ActiveMax": [
+            "discrete",
+            0,
+            103175
+        ],
+        "ActiveMin": [
+            "discrete",
+            0,
+            50911
+        ],
+        "IdleMean": [
+            "discrete",
+            0.0,
+            10200000.0
+        ],
+        "IdleStd": [
+            "continuous",
+            0.0,
+            34941.27201
+        ],
+        "IdleMax": [
+            "discrete",
+            0,
+            10200000
+        ],
+        "IdleMin": [
+            "discrete",
+            0,
+            10100000
+        ]
+    },
+    "DDoS": {
+        "FlowDuration": [
+            "discrete",
+            3,
+            103123922
+        ],
+        "TotalFwdPackets": [
+            "discrete",
+            1,
+            10
+        ],
+        "TotalBackwardPackets": [
+            "discrete",
+            0,
+            8
+        ],
+        "TotalLengthofFwdPackets": [
+            "discrete",
+            6,
+            68
+        ],
+        "TotalLengthofBwdPackets": [
+            "discrete",
+            0,
+            11607
+        ],
+        "FwdPacketLengthMax": [
+            "discrete",
+            6,
+            20
+        ],
+        "FwdPacketLengthMin": [
+            "discrete",
+            0,
+            6
+        ],
+        "FwdPacketLengthStd": [
+            "continuous",
+            0.0,
+            14.14213562
+        ],
+        "BwdPacketLengthMax": [
+            "discrete",
+            0,
+            11595
+        ],
+        "BwdPacketLengthMin": [
+            "discrete",
+            0,
+            1375
+        ],
+        "BwdPacketLengthStd": [
+            "continuous",
+            0.0,
+            8194.660487
+        ],
+        "FlowIATMean": [
+            "continuous",
+            2.333333333,
+            27100000.0
+        ],
+        "FlowIATStd": [
+            "continuous",
+            0.0,
+            47000000.0
+        ],
+        "FlowIATMax": [
+            "discrete",
+            3,
+            101000000
+        ],
+        "FlowIATMin": [
+            "discrete",
+            -1,
+            8773188
+        ],
+        "FwdIATTotal": [
+            "discrete",
+            0,
+            103000000
+        ],
+        "FwdIATMean": [
+            "continuous",
+            0.0,
+            27100000.0
+        ],
+        "FwdIATStd": [
+            "continuous",
+            0.0,
+            47000000.0
+        ],
+        "FwdIATMax": [
+            "discrete",
+            0,
+            101000000
+        ],
+        "FwdIATMin": [
+            "discrete",
+            -1,
+            8773188
+        ],
+        "BwdIATTotal": [
+            "discrete",
+            0,
+            6171904
+        ],
+        "BwdIATMean": [
+            "continuous",
+            0.0,
+            1234380.8
+        ],
+        "BwdIATStd": [
+            "continuous",
+            0.0,
+            2754528.626
+        ],
+        "BwdIATMax": [
+            "discrete",
+            0,
+            6161828
+        ],
+        "BwdIATMin": [
+            "discrete",
+            0,
+            35138
+        ],
+        "FwdPSHFlags": [
+            "discrete",
+            0,
+            0
+        ],
+        "FwdURGFlags": [
+            "discrete",
+            0,
+            0
+        ],
+        "FwdHeaderLength": [
+            "discrete",
+            20,
+            212
+        ],
+        "BwdHeaderLength": [
+            "discrete",
+            0,
+            172
+        ],
+        "PacketLengthMean": [
+            "continuous",
+            2.0,
+            1661.0
+        ],
+        "PacketLengthStd": [
+            "continuous",
+            0.0,
+            4380.487987
+        ],
+        "PacketLengthVariance": [
+            "continuous",
+            0.0,
+            19200000.0
+        ],
+        "FINFlagCount": [
+            "discrete",
+            0,
+            1
+        ],
+        "SYNFlagCount": [
+            "discrete",
+            0,
+            0
+        ],
+        "RSTFlagCount": [
+            "discrete",
+            0,
+            0
+        ],
+        "PSHFlagCount": [
+            "discrete",
+            0,
+            1
+        ],
+        "ACKFlagCount": [
+            "discrete",
+            0,
+            1
+        ],
+        "URGFlagCount": [
+            "discrete",
+            0,
+            1
+        ],
+        "CWEFlagCount": [
+            "discrete",
+            0,
+            0
+        ],
+        "ECEFlagCount": [
+            "discrete",
+            0,
+            0
+        ],
+        "Down/UpRatio": [
+            "discrete",
+            0,
+            6
+        ],
+        "AveragePacketSize": [
+            "continuous",
+            3.0,
+            1937.833333
+        ],
+        "SubflowFwdPackets": [
+            "discrete",
+            1,
+            10
+        ],
+        "SubflowFwdBytes": [
+            "discrete",
+            6,
+            68
+        ],
+        "SubflowBwdPackets": [
+            "discrete",
+            0,
+            8
+        ],
+        "SubflowBwdBytes": [
+            "discrete",
+            0,
+            11607
+        ],
+        "Init_Win_bytes_forward": [
+            "discrete",
+            0,
+            29200
+        ],
+        "Init_Win_bytes_backward": [
+            "discrete",
+            -1,
+            229
+        ],
+        "act_data_pkt_fwd": [
+            "discrete",
+            0,
+            8
+        ],
+        "min_seg_size_forward": [
+            "discrete",
+            20,
+            20
+        ],
+        "ActiveMean": [
+            "discrete",
+            0.0,
+            4998871.0
+        ],
+        "ActiveStd": [
+            "discrete",
+            0.0,
+            0.0
+        ],
+        "ActiveMax": [
+            "discrete",
+            0,
+            4998871
+        ],
+        "ActiveMin": [
+            "discrete",
+            0,
+            4998871
+        ],
+        "IdleMean": [
+            "discrete",
+            0.0,
+            101000000.0
+        ],
+        "IdleStd": [
+            "discrete",
+            0.0,
+            64300000.0
+        ],
+        "IdleMax": [
+            "discrete",
+            0,
+            101000000
+        ],
+        "IdleMin": [
+            "discrete",
+            0,
+            101000000
+        ]
+    },
+    "DoS": {
+        "FlowDuration": [
+            "discrete",
+            0,
+            119968626
+        ],
+        "TotalFwdPackets": [
+            "discrete",
+            1,
+            21
+        ],
+        "TotalBackwardPackets": [
+            "discrete",
+            0,
+            10
+        ],
+        "TotalLengthofFwdPackets": [
+            "discrete",
+            0,
+            5720
+        ],
+        "TotalLengthofBwdPackets": [
+            "discrete",
+            0,
+            13043
+        ],
+        "FwdPacketLengthMax": [
+            "discrete",
+            0,
+            1983
+        ],
+        "FwdPacketLengthMin": [
+            "discrete",
+            0,
+            1983
+        ],
+        "FwdPacketLengthStd": [
+            "continuous",
+            0.0,
+            1019.647978
+        ],
+        "BwdPacketLengthMax": [
+            "discrete",
+            0,
+            11632
+        ],
+        "BwdPacketLengthMin": [
+            "discrete",
+            0,
+            535
+        ],
+        "BwdPacketLengthStd": [
+            "continuous",
+            0.0,
+            6715.738331
+        ],
+        "FlowIATMean": [
+            "continuous",
+            0.0,
+            118000000.0
+        ],
+        "FlowIATStd": [
+            "continuous",
+            0.0,
+            81900000.0
+        ],
+        "FlowIATMax": [
+            "discrete",
+            0,
+            119000000
+        ],
+        "FlowIATMin": [
+            "discrete",
+            -5,
+            118000000
+        ],
+        "FwdIATTotal": [
+            "discrete",
+            0,
+            120000000
+        ],
+        "FwdIATMean": [
+            "continuous",
+            0.0,
+            119000000.0
+        ],
+        "FwdIATStd": [
+            "continuous",
+            0.0,
+            83600000.0
+        ],
+        "FwdIATMax": [
+            "discrete",
+            0,
+            119000000
+        ],
+        "FwdIATMin": [
+            "discrete",
+            -1,
+            119000000
+        ],
+        "BwdIATTotal": [
+            "discrete",
+            0,
+            119000000
+        ],
+        "BwdIATMean": [
+            "continuous",
+            0.0,
+            119000000.0
+        ],
+        "BwdIATStd": [
+            "continuous",
+            0.0,
+            77800000.0
+        ],
+        "BwdIATMax": [
+            "discrete",
+            0,
+            119000000
+        ],
+        "BwdIATMin": [
+            "discrete",
+            0,
+            119000000
+        ],
+        "FwdPSHFlags": [
+            "discrete",
+            0,
+            1
+        ],
+        "FwdURGFlags": [
+            "discrete",
+            0,
+            0
+        ],
+        "FwdHeaderLength": [
+            "discrete",
+            20,
+            696
+        ],
+        "BwdHeaderLength": [
+            "discrete",
+            0,
+            328
+        ],
+        "PacketLengthMean": [
+            "continuous",
+            0.0,
+            1710.0
+        ],
+        "PacketLengthStd": [
+            "continuous",
+            0.0,
+            4362.764179
+        ],
+        "PacketLengthVariance": [
+            "continuous",
+            0.0,
+            19000000.0
+        ],
+        "FINFlagCount": [
+            "discrete",
+            0,
+            1
+        ],
+        "SYNFlagCount": [
+            "discrete",
+            0,
+            1
+        ],
+        "RSTFlagCount": [
+            "discrete",
+            0,
+            0
+        ],
+        "PSHFlagCount": [
+            "discrete",
+            0,
+            1
+        ],
+        "ACKFlagCount": [
+            "discrete",
+            0,
+            1
+        ],
+        "URGFlagCount": [
+            "discrete",
+            0,
+            1
+        ],
+        "CWEFlagCount": [
+            "discrete",
+            0,
+            0
+        ],
+        "ECEFlagCount": [
+            "discrete",
+            0,
+            0
+        ],
+        "Down/UpRatio": [
+            "discrete",
+            0,
+            4
+        ],
+        "AveragePacketSize": [
+            "continuous",
+            0.0,
+            1995.0
+        ],
+        "SubflowFwdPackets": [
+            "discrete",
+            1,
+            21
+        ],
+        "SubflowFwdBytes": [
+            "discrete",
+            0,
+            5720
+        ],
+        "SubflowBwdPackets": [
+            "discrete",
+            0,
+            10
+        ],
+        "SubflowBwdBytes": [
+            "discrete",
+            0,
+            13043
+        ],
+        "Init_Win_bytes_forward": [
+            "discrete",
+            0,
+            29200
+        ],
+        "Init_Win_bytes_backward": [
+            "discrete",
+            -1,
+            28960
+        ],
+        "act_data_pkt_fwd": [
+            "discrete",
+            0,
+            11
+        ],
+        "min_seg_size_forward": [
+            "discrete",
+            20,
+            40
+        ],
+        "ActiveMean": [
+            "continuous",
+            0.0,
+            9418959.0
+        ],
+        "ActiveStd": [
+            "continuous",
+            0.0,
+            9587151.729
+        ],
+        "ActiveMax": [
+            "discrete",
+            0,
+            13600000
+        ],
+        "ActiveMin": [
+            "discrete",
+            0,
+            9418959
+        ],
+        "IdleMean": [
+            "continuous",
+            0.0,
+            119000000.0
+        ],
+        "IdleStd": [
+            "continuous",
+            0.0,
+            66500000.0
+        ],
+        "IdleMax": [
+            "discrete",
+            0,
+            119000000
+        ],
+        "IdleMin": [
+            "discrete",
+            0,
+            119000000
+        ]
+    },
+    "Others": {
+        "FlowDuration": [
+            "discrete",
+            20,
+            119973135
+        ],
+        "TotalFwdPackets": [
+            "discrete",
+            2,
+            4376
+        ],
+        "TotalBackwardPackets": [
+            "discrete",
+            0,
+            4374
+        ],
+        "TotalLengthofFwdPackets": [
+            "discrete",
+            12,
+            2321478
+        ],
+        "TotalLengthofBwdPackets": [
+            "discrete",
+            0,
+            7878135
+        ],
+        "FwdPacketLengthMax": [
+            "discrete",
+            6,
+            5792
+        ],
+        "FwdPacketLengthMin": [
+            "discrete",
+            0,
+            6
+        ],
+        "FwdPacketLengthStd": [
+            "continuous",
+            0.0,
+            505.3550293
+        ],
+        "BwdPacketLengthMax": [
+            "discrete",
+            0,
+            14480
+        ],
+        "BwdPacketLengthMin": [
+            "discrete",
+            0,
+            6
+        ],
+        "BwdPacketLengthStd": [
+            "continuous",
+            0.0,
+            2366.09794
+        ],
+        "FlowIATMean": [
+            "continuous",
+            20.0,
+            1981161.922
+        ],
+        "FlowIATStd": [
+            "continuous",
+            0.0,
+            8701276.406
+        ],
+        "FlowIATMax": [
+            "discrete",
+            20,
+            55000000
+        ],
+        "FlowIATMin": [
+            "discrete",
+            -1,
+            31
+        ],
+        "FwdIATTotal": [
+            "discrete",
+            20,
+            120000000
+        ],
+        "FwdIATMean": [
+            "continuous",
+            20.0,
+            4041554.32
+        ],
+        "FwdIATStd": [
+            "continuous",
+            0.0,
+            12200000.0
+        ],
+        "FwdIATMax": [
+            "discrete",
+            20,
+            55000000
+        ],
+        "FwdIATMin": [
+            "discrete",
+            0,
+            411
+        ],
+        "BwdIATTotal": [
+            "discrete",
+            0,
+            120000000
+        ],
+        "BwdIATMean": [
+            "continuous",
+            0.0,
+            4041546.56
+        ],
+        "BwdIATStd": [
+            "continuous",
+            0.0,
+            12200000.0
+        ],
+        "BwdIATMax": [
+            "discrete",
+            0,
+            55000000
+        ],
+        "BwdIATMin": [
+            "discrete",
+            0,
+            528
+        ],
+        "FwdPSHFlags": [
+            "discrete",
+            0,
+            1
+        ],
+        "FwdURGFlags": [
+            "discrete",
+            0,
+            0
+        ],
+        "FwdHeaderLength": [
+            "discrete",
+            40,
+            89356
+        ],
+        "BwdHeaderLength": [
+            "discrete",
+            0,
+            87480
+        ],
+        "PacketLengthMean": [
+            "continuous",
+            6.0,
+            1610.776871
+        ],
+        "PacketLengthStd": [
+            "continuous",
+            0.0,
+            2416.475297
+        ],
+        "PacketLengthVariance": [
+            "continuous",
+            0.0,
+            5839352.859
+        ],
+        "FINFlagCount": [
+            "discrete",
+            0,
+            0
+        ],
+        "SYNFlagCount": [
+            "discrete",
+            0,
+            1
+        ],
+        "RSTFlagCount": [
+            "discrete",
+            0,
+            0
+        ],
+        "PSHFlagCount": [
+            "discrete",
+            0,
+            1
+        ],
+        "ACKFlagCount": [
+            "discrete",
+            0,
+            1
+        ],
+        "URGFlagCount": [
+            "discrete",
+            0,
+            1
+        ],
+        "CWEFlagCount": [
+            "discrete",
+            0,
+            0
+        ],
+        "ECEFlagCount": [
+            "discrete",
+            0,
+            0
+        ],
+        "Down/UpRatio": [
+            "discrete",
+            0,
+            1
+        ],
+        "AveragePacketSize": [
+            "continuous",
+            9.0,
+            1611.105467
+        ],
+        "SubflowFwdPackets": [
+            "discrete",
+            2,
+            4376
+        ],
+        "SubflowFwdBytes": [
+            "discrete",
+            12,
+            2321478
+        ],
+        "SubflowBwdPackets": [
+            "discrete",
+            0,
+            4374
+        ],
+        "SubflowBwdBytes": [
+            "discrete",
+            0,
+            7878135
+        ],
+        "Init_Win_bytes_forward": [
+            "discrete",
+            235,
+            8192
+        ],
+        "Init_Win_bytes_backward": [
+            "discrete",
+            -1,
+            3977
+        ],
+        "act_data_pkt_fwd": [
+            "discrete",
+            1,
+            4375
+        ],
+        "min_seg_size_forward": [
+            "discrete",
+            20,
+            32
+        ],
+        "ActiveMean": [
+            "continuous",
+            0.0,
+            21900000.0
+        ],
+        "ActiveStd": [
+            "continuous",
+            0.0,
+            362570.0288
+        ],
+        "ActiveMax": [
+            "discrete",
+            0,
+            21900000
+        ],
+        "ActiveMin": [
+            "discrete",
+            0,
+            21900000
+        ],
+        "IdleMean": [
+            "discrete",
+            0.0,
+            41500000.0
+        ],
+        "IdleStd": [
+            "discrete",
+            0.0,
+            19100000.0
+        ],
+        "IdleMax": [
+            "discrete",
+            0,
+            55000000
+        ],
+        "IdleMin": [
+            "discrete",
+            0,
+            41500000
+        ]
+    },
+    "Patator": {
+        "FlowDuration": [
+            "discrete",
+            0,
+            119816717
+        ],
+        "TotalFwdPackets": [
+            "discrete",
+            1,
+            32
+        ],
+        "TotalBackwardPackets": [
+            "discrete",
+            0,
+            43
+        ],
+        "TotalLengthofFwdPackets": [
+            "discrete",
+            0,
+            3832
+        ],
+        "TotalLengthofBwdPackets": [
+            "discrete",
+            0,
+            5289
+        ],
+        "FwdPacketLengthMax": [
+            "discrete",
+            0,
+            912
+        ],
+        "FwdPacketLengthMin": [
+            "discrete",
+            0,
+            14
+        ],
+        "FwdPacketLengthStd": [
+            "continuous",
+            0.0,
+            274.3198752
+        ],
+        "BwdPacketLengthMax": [
+            "discrete",
+            0,
+            976
+        ],
+        "BwdPacketLengthMin": [
+            "discrete",
+            0,
+            0
+        ],
+        "BwdPacketLengthStd": [
+            "continuous",
+            0.0,
+            362.8967547
+        ],
+        "FlowIATMean": [
+            "continuous",
+            0.0,
+            3865055.387
+        ],
+        "FlowIATStd": [
+            "continuous",
+            0.0,
+            20700000.0
+        ],
+        "FlowIATMax": [
+            "discrete",
+            0,
+            115000000
+        ],
+        "FlowIATMin": [
+            "discrete",
+            0,
+            40247
+        ],
+        "FwdIATTotal": [
+            "discrete",
+            0,
+            17300000
+        ],
+        "FwdIATMean": [
+            "continuous",
+            0.0,
+            930231.5714
+        ],
+        "FwdIATStd": [
+            "continuous",
+            0.0,
+            1675570.56
+        ],
+        "FwdIATMax": [
+            "discrete",
+            0,
+            5025812
+        ],
+        "FwdIATMin": [
+            "discrete",
+            0,
+            40247
+        ],
+        "BwdIATTotal": [
+            "discrete",
+            0,
+            120000000
+        ],
+        "BwdIATMean": [
+            "continuous",
+            0.0,
+            7987775.6
+        ],
+        "BwdIATStd": [
+            "continuous",
+            0.0,
+            29700000.0
+        ],
+        "BwdIATMax": [
+            "discrete",
+            0,
+            115000000
+        ],
+        "BwdIATMin": [
+            "discrete",
+            0,
+            2238
+        ],
+        "FwdPSHFlags": [
+            "discrete",
+            0,
+            1
+        ],
+        "FwdURGFlags": [
+            "discrete",
+            0,
+            0
+        ],
+        "FwdHeaderLength": [
+            "discrete",
+            32,
+            1080
+        ],
+        "BwdHeaderLength": [
+            "discrete",
+            0,
+            1456
+        ],
+        "PacketLengthMean": [
+            "continuous",
+            0.0,
+            125.48
+        ],
+        "PacketLengthStd": [
+            "continuous",
+            0.0,
+            273.1972913
+        ],
+        "PacketLengthVariance": [
+            "continuous",
+            0.0,
+            74636.76
+        ],
+        "FINFlagCount": [
+            "discrete",
+            0,
+            0
+        ],
+        "SYNFlagCount": [
+            "discrete",
+            0,
+            1
+        ],
+        "RSTFlagCount": [
+            "discrete",
+            0,
+            0
+        ],
+        "PSHFlagCount": [
+            "discrete",
+            0,
+            1
+        ],
+        "ACKFlagCount": [
+            "discrete",
+            0,
+            1
+        ],
+        "URGFlagCount": [
+            "discrete",
+            0,
+            1
+        ],
+        "CWEFlagCount": [
+            "discrete",
+            0,
+            0
+        ],
+        "ECEFlagCount": [
+            "discrete",
+            0,
+            0
+        ],
+        "Down/UpRatio": [
+            "discrete",
+            0,
+            1
+        ],
+        "AveragePacketSize": [
+            "continuous",
+            0.0,
+            130.7083333
+        ],
+        "SubflowFwdPackets": [
+            "discrete",
+            1,
+            32
+        ],
+        "SubflowFwdBytes": [
+            "discrete",
+            0,
+            3832
+        ],
+        "SubflowBwdPackets": [
+            "discrete",
+            0,
+            43
+        ],
+        "SubflowBwdBytes": [
+            "discrete",
+            0,
+            5289
+        ],
+        "Init_Win_bytes_forward": [
+            "discrete",
+            227,
+            29200
+        ],
+        "Init_Win_bytes_backward": [
+            "discrete",
+            -1,
+            257
+        ],
+        "act_data_pkt_fwd": [
+            "discrete",
+            0,
+            22
+        ],
+        "min_seg_size_forward": [
+            "discrete",
+            32,
+            44
+        ],
+        "ActiveMean": [
+            "discrete",
+            0.0,
+            0.0
+        ],
+        "ActiveStd": [
+            "discrete",
+            0.0,
+            0.0
+        ],
+        "ActiveMax": [
+            "discrete",
+            0,
+            0
+        ],
+        "ActiveMin": [
+            "discrete",
+            0,
+            0
+        ],
+        "IdleMean": [
+            "discrete",
+            0.0,
+            0.0
+        ],
+        "IdleStd": [
+            "discrete",
+            0.0,
+            0.0
+        ],
+        "IdleMax": [
+            "discrete",
+            0,
+            0
+        ],
+        "IdleMin": [
+            "discrete",
+            0,
+            0
+        ]
+    },
+    "PortScan": {
+        "FlowDuration": [
+            "discrete",
+            0,
+            116005956
+        ],
+        "TotalFwdPackets": [
+            "discrete",
+            1,
+            6
+        ],
+        "TotalBackwardPackets": [
+            "discrete",
+            0,
+            6
+        ],
+        "TotalLengthofFwdPackets": [
+            "discrete",
+            0,
+            168
+        ],
+        "TotalLengthofBwdPackets": [
+            "discrete",
+            0,
+            11595
+        ],
+        "FwdPacketLengthMax": [
+            "discrete",
+            0,
+            168
+        ],
+        "FwdPacketLengthMin": [
+            "discrete",
+            0,
+            2
+        ],
+        "FwdPacketLengthStd": [
+            "continuous",
+            0.0,
+            75.13188404
+        ],
+        "BwdPacketLengthMax": [
+            "discrete",
+            0,
+            5792
+        ],
+        "BwdPacketLengthMin": [
+            "discrete",
+            0,
+            6
+        ],
+        "BwdPacketLengthStd": [
+            "continuous",
+            0.0,
+            2628.883261
+        ],
+        "FlowIATMean": [
+            "continuous",
+            0.0,
+            38700000.0
+        ],
+        "FlowIATStd": [
+            "continuous",
+            0.0,
+            67000000.0
+        ],
+        "FlowIATMax": [
+            "discrete",
+            0,
+            116000000
+        ],
+        "FlowIATMin": [
+            "discrete",
+            0,
+            2011075
+        ],
+        "FwdIATTotal": [
+            "discrete",
+            0,
+            116000000
+        ],
+        "FwdIATMean": [
+            "continuous",
+            0.0,
+            116000000.0
+        ],
+        "FwdIATStd": [
+            "continuous",
+            0.0,
+            18000000.0
+        ],
+        "FwdIATMax": [
+            "discrete",
+            0,
+            116000000
+        ],
+        "FwdIATMin": [
+            "discrete",
+            0,
+            116000000
+        ],
+        "BwdIATTotal": [
+            "discrete",
+            0,
+            116000000
+        ],
+        "BwdIATMean": [
+            "continuous",
+            0.0,
+            116000000.0
+        ],
+        "BwdIATStd": [
+            "continuous",
+            0.0,
+            18000000.0
+        ],
+        "BwdIATMax": [
+            "discrete",
+            0,
+            116000000
+        ],
+        "BwdIATMin": [
+            "discrete",
+            0,
+            116000000
+        ],
+        "FwdPSHFlags": [
+            "discrete",
+            0,
+            0
+        ],
+        "FwdURGFlags": [
+            "discrete",
+            0,
+            0
+        ],
+        "FwdHeaderLength": [
+            "discrete",
+            0,
+            200
+        ],
+        "BwdHeaderLength": [
+            "discrete",
+            0,
+            200
+        ],
+        "PacketLengthMean": [
+            "continuous",
+            0.0,
+            1161.3
+        ],
+        "PacketLengthStd": [
+            "continuous",
+            0.0,
+            1980.858117
+        ],
+        "PacketLengthVariance": [
+            "continuous",
+            0.0,
+            3923798.879
+        ],
+        "FINFlagCount": [
+            "discrete",
+            0,
+            0
+        ],
+        "SYNFlagCount": [
+            "discrete",
+            0,
+            0
+        ],
+        "RSTFlagCount": [
+            "discrete",
+            0,
+            0
+        ],
+        "PSHFlagCount": [
+            "discrete",
+            0,
+            1
+        ],
+        "ACKFlagCount": [
+            "discrete",
+            0,
+            1
+        ],
+        "URGFlagCount": [
+            "discrete",
+            0,
+            1
+        ],
+        "CWEFlagCount": [
+            "discrete",
+            0,
+            0
+        ],
+        "ECEFlagCount": [
+            "discrete",
+            0,
+            0
+        ],
+        "Down/UpRatio": [
+            "discrete",
+            0,
+            2
+        ],
+        "AveragePacketSize": [
+            "continuous",
+            0.0,
+            1290.333333
+        ],
+        "SubflowFwdPackets": [
+            "discrete",
+            1,
+            6
+        ],
+        "SubflowFwdBytes": [
+            "discrete",
+            0,
+            168
+        ],
+        "SubflowBwdPackets": [
+            "discrete",
+            0,
+            6
+        ],
+        "SubflowBwdBytes": [
+            "discrete",
+            0,
+            11595
+        ],
+        "Init_Win_bytes_forward": [
+            "discrete",
+            -1,
+            64240
+        ],
+        "Init_Win_bytes_backward": [
+            "discrete",
+            -1,
+            29200
+        ],
+        "act_data_pkt_fwd": [
+            "discrete",
+            0,
+            1
+        ],
+        "min_seg_size_forward": [
+            "discrete",
+            0,
+            40
+        ],
+        "ActiveMean": [
+            "discrete",
+            0.0,
+            2011075.0
+        ],
+        "ActiveStd": [
+            "discrete",
+            0.0,
+            0.0
+        ],
+        "ActiveMax": [
+            "discrete",
+            0,
+            2011075
+        ],
+        "ActiveMin": [
+            "discrete",
+            0,
+            2011075
+        ],
+        "IdleMean": [
+            "discrete",
+            0.0,
+            116000000.0
+        ],
+        "IdleStd": [
+            "continuous",
+            0.0,
+            255201.9084
+        ],
+        "IdleMax": [
+            "discrete",
+            0,
+            116000000
+        ],
+        "IdleMin": [
+            "discrete",
+            0,
+            116000000
+        ]
+    },
+    "Web Attack": {
+        "FlowDuration": [
+            "discrete",
+            18,
+            68150616
+        ],
+        "TotalFwdPackets": [
+            "discrete",
+            1,
+            204
+        ],
+        "TotalBackwardPackets": [
+            "discrete",
+            0,
+            114
+        ],
+        "TotalLengthofFwdPackets": [
+            "discrete",
+            0,
+            48985
+        ],
+        "TotalLengthofBwdPackets": [
+            "discrete",
+            0,
+            183687
+        ],
+        "FwdPacketLengthMax": [
+            "discrete",
+            0,
+            602
+        ],
+        "FwdPacketLengthMin": [
+            "discrete",
+            0,
+            0
+        ],
+        "FwdPacketLengthStd": [
+            "continuous",
+            0.0,
+            301.0
+        ],
+        "BwdPacketLengthMax": [
+            "discrete",
+            0,
+            7240
+        ],
+        "BwdPacketLengthMin": [
+            "discrete",
+            0,
+            0
+        ],
+        "BwdPacketLengthStd": [
+            "continuous",
+            0.0,
+            2321.967872
+        ],
+        "FlowIATMean": [
+            "continuous",
+            18.0,
+            2000051.333
+        ],
+        "FlowIATStd": [
+            "continuous",
+            0.0,
+            3463495.122
+        ],
+        "FlowIATMax": [
+            "discrete",
+            18,
+            5999351
+        ],
+        "FlowIATMin": [
+            "discrete",
+            2,
+            848
+        ],
+        "FwdIATTotal": [
+            "discrete",
+            0,
+            68100000
+        ],
+        "FwdIATMean": [
+            "continuous",
+            0.0,
+            3000077.0
+        ],
+        "FwdIATStd": [
+            "continuous",
+            0.0,
+            4241613.968
+        ],
+        "FwdIATMax": [
+            "discrete",
+            0,
+            5999351
+        ],
+        "FwdIATMin": [
+            "discrete",
+            0,
+            7072
+        ],
+        "BwdIATTotal": [
+            "discrete",
+            0,
+            68200000
+        ],
+        "BwdIATMean": [
+            "continuous",
+            0.0,
+            3298365.333
+        ],
+        "BwdIATStd": [
+            "continuous",
+            0.0,
+            2864350.285
+        ],
+        "BwdIATMax": [
+            "discrete",
+            0,
+            5005202
+        ],
+        "BwdIATMin": [
+            "discrete",
+            0,
+            21661
+        ],
+        "FwdPSHFlags": [
+            "discrete",
+            0,
+            0
+        ],
+        "FwdURGFlags": [
+            "discrete",
+            0,
+            0
+        ],
+        "FwdHeaderLength": [
+            "discrete",
+            32,
+            6536
+        ],
+        "BwdHeaderLength": [
+            "discrete",
+            0,
+            3656
+        ],
+        "PacketLengthMean": [
+            "continuous",
+            0.0,
+            752.9838188
+        ],
+        "PacketLengthStd": [
+            "continuous",
+            0.0,
+            1518.584808
+        ],
+        "PacketLengthVariance": [
+            "continuous",
+            0.0,
+            2306099.818
+        ],
+        "FINFlagCount": [
+            "discrete",
+            0,
+            0
+        ],
+        "SYNFlagCount": [
+            "discrete",
+            0,
+            0
+        ],
+        "RSTFlagCount": [
+            "discrete",
+            0,
+            0
+        ],
+        "PSHFlagCount": [
+            "discrete",
+            0,
+            1
+        ],
+        "ACKFlagCount": [
+            "discrete",
+            0,
+            1
+        ],
+        "URGFlagCount": [
+            "discrete",
+            0,
+            1
+        ],
+        "CWEFlagCount": [
+            "discrete",
+            0,
+            0
+        ],
+        "ECEFlagCount": [
+            "discrete",
+            0,
+            0
+        ],
+        "Down/UpRatio": [
+            "discrete",
+            0,
+            1
+        ],
+        "AveragePacketSize": [
+            "continuous",
+            0.0,
+            755.4285714
+        ],
+        "SubflowFwdPackets": [
+            "discrete",
+            1,
+            204
+        ],
+        "SubflowFwdBytes": [
+            "discrete",
+            0,
+            48985
+        ],
+        "SubflowBwdPackets": [
+            "discrete",
+            0,
+            114
+        ],
+        "SubflowBwdBytes": [
+            "discrete",
+            0,
+            183687
+        ],
+        "Init_Win_bytes_forward": [
+            "discrete",
+            237,
+            29200
+        ],
+        "Init_Win_bytes_backward": [
+            "discrete",
+            -1,
+            28960
+        ],
+        "act_data_pkt_fwd": [
+            "discrete",
+            0,
+            101
+        ],
+        "min_seg_size_forward": [
+            "discrete",
+            32,
+            32
+        ],
+        "ActiveMean": [
+            "discrete",
+            0.0,
+            0.0
+        ],
+        "ActiveStd": [
+            "discrete",
+            0.0,
+            0.0
+        ],
+        "ActiveMax": [
+            "discrete",
+            0,
+            0
+        ],
+        "ActiveMin": [
+            "discrete",
+            0,
+            0
+        ],
+        "IdleMean": [
+            "discrete",
+            0.0,
+            0.0
+        ],
+        "IdleStd": [
+            "discrete",
+            0.0,
+            0.0
+        ],
+        "IdleMax": [
+            "discrete",
+            0,
+            0
+        ],
+        "IdleMin": [
+            "discrete",
+            0,
+            0
+        ]
+    }
+}

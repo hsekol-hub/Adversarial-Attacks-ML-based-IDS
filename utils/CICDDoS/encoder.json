@@ -1,0 +1,11 @@
+{
+    "Label": {
+        "Benign": 0,
+        "LDAP": 1,
+        "MSSQL": 2,
+        "NetBIOS": 3,
+        "Syn": 4,
+        "UDP": 5,
+        "UDPLag": 6
+    }
+}

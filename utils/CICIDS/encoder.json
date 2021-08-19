@@ -1,0 +1,12 @@
+{
+    "Label": {
+        "Benign": 0,
+        "Bot": 1,
+        "DDoS": 2,
+        "DoS": 3,
+        "Others": 4,
+        "Patator": 5,
+        "PortScan": 6,
+        "Web Attack": 7
+    }
+}
