@@ -127,3 +127,13 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+
+.DS_Store
+.idea
+data
+core/adv/lowprofool.py
+core/adv/deepfool.py
+core/models/ids_models.py
+
+test.py
