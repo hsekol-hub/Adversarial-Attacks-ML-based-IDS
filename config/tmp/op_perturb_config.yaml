@@ -1,0 +1,54 @@
+CICDDoS:
+  functional_features:
+  - SourcePort
+  - DestinationPort
+  - Protocol
+  non_perturbed_features: null
+CICIDS:
+  functional_features: null
+  non_perturbed_features: null
+NSL-KDD:
+  binary_features:
+  - land
+  - logged_in
+  - root_shell
+  - is_host_login
+  - is_guest_login
+  functional_features:
+  - duration
+  - protocol_type
+  - service
+  - flag
+  non_perturbed_features:
+  - serror_rate
+  - dst_host_same_srv_rate
+  - count
+  - dst_host_diff_srv_rate
+  - dst_host_same_src_port_rate
+  - same_srv_rate
+  - dst_host_srv_count
+  - dst_host_srv_serror_rate
+  - dst_host_srv_diff_host_rate
+  - diff_srv_rate
+  - dst_host_serror_rate
+  perturbed_features:
+  - srv_serror_rate
+  - hot
+  - num_file_creations
+  - su_attempted
+  - num_compromised
+  - urgent
+  - wrong_fragment
+  - num_failed_logins
+  - src_bytes
+  - num_access_files
+  - dst_host_rerror_rate
+  - num_shells
+  - dst_host_count
+  - dst_bytes
+  - srv_count
+  - num_root
+  - rerror_rate
+  - srv_diff_host_rate
+  - dst_host_srv_rerror_rate
+  - srv_rerror_rate

@@ -1,0 +1,20 @@
+---
+NSL-KDD:
+  functional_features:
+    - duration
+    - protocol_type
+    - service
+    - flag
+  non_perturbed_features:
+    - duration
+CICDDoS:
+  functional_features:
+    - SourcePort
+    - DestinationPort
+    - Protocol
+  non_perturbed_features: null
+CICIDS:
+  functional_features: null
+  non_perturbed_features: null
+
+...

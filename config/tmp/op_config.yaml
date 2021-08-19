@@ -1,0 +1,31 @@
+adv_config:
+  capability:
+    batch_size: 64
+    cor_weights: false
+    perturb_threshold_features: 0.03
+  deepfool:
+    alpha: 0.001
+    epsilon: 1.0e-05
+    max_iters: 2000
+    overshoot: 0.02
+  goals: normal
+  knowledge: test
+  lowprofool:
+    alpha: 0.01
+    lambda: 11.5
+    max_iters: 3000
+dataset: NSL-KDD
+dir_config:
+  logs: /Users/sharma/PycharmProjects/amlids/logs
+  processed_data_dir: /Users/sharma/PycharmProjects/amlids/data/NSL-KDD/processed
+  raw_data_dir: /Users/sharma/PycharmProjects/amlids/data/NSL-KDD/raw
+  results: /Users/sharma/PycharmProjects/amlids/results/NSL-KDD
+  root_dir: /Users/sharma/PycharmProjects/amlids
+  utils: /Users/sharma/PycharmProjects/amlids/utils/NSL-KDD
+model_config:
+  batch_size: 256
+  lr: 0.001
+  n_epochs: 20
+  scaled_flag: true
+preprocess_data: false
+sample_data: false
