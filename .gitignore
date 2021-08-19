@@ -133,6 +133,8 @@ dmypy.json
 .idea
 data
 results
+
+# hidden modules
 core/adv/lowprofool.py
 core/adv/deepfool.py
 core/models/ids_models.py

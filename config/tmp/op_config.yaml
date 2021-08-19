@@ -16,12 +16,12 @@ adv_config:
     max_iters: 3000
 dataset: NSL-KDD
 dir_config:
-  logs: /Users/sharma/PycharmProjects/amlids/logs
-  processed_data_dir: /Users/sharma/PycharmProjects/amlids/data/NSL-KDD/processed
-  raw_data_dir: /Users/sharma/PycharmProjects/amlids/data/NSL-KDD/raw
-  results: /Users/sharma/PycharmProjects/amlids/results/NSL-KDD
-  root_dir: /Users/sharma/PycharmProjects/amlids
-  utils: /Users/sharma/PycharmProjects/amlids/utils/NSL-KDD
+  logs: /Users/sharma/PycharmProjects/Adversarial-Attacks-ML-based-IDS/logs
+  processed_data_dir: /Users/sharma/PycharmProjects/Adversarial-Attacks-ML-based-IDS/data/NSL-KDD/processed
+  raw_data_dir: /Users/sharma/PycharmProjects/Adversarial-Attacks-ML-based-IDS/data/NSL-KDD/raw
+  results: /Users/sharma/PycharmProjects/Adversarial-Attacks-ML-based-IDS/results/NSL-KDD
+  root_dir: /Users/sharma/PycharmProjects/Adversarial-Attacks-ML-based-IDS
+  utils: /Users/sharma/PycharmProjects/Adversarial-Attacks-ML-based-IDS/utils/NSL-KDD
 model_config:
   batch_size: 256
   lr: 0.001
