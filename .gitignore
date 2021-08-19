@@ -132,7 +132,6 @@ dmypy.json
 .DS_Store
 .idea
 data
-tests
 results
 core/adv/lowprofool.py
 core/adv/deepfool.py
