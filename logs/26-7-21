@@ -1,0 +1,6 @@
+20:54:24,281 INFO     [run.py:66] ==================================================Logging Begins==================================================
+20:54:24,281 INFO     [run.py:67] --------------------Dataset selected: NSL-KDD--------------------
+20:54:27,587 INFO     [adv_utils.py:158] ________________________________________________________________________________________________________________________
+20:54:27,587 INFO     [adv_utils.py:160] -- Initialising threat model for lowprofool... --
+20:54:32,5 INFO     [adv_utils.py:49] -- Perturbation space saved in utils directory... --
+20:54:32,43 INFO     [adv_utils.py:113] ** Total features being perturbed: 22

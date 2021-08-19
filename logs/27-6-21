@@ -1,0 +1,70 @@
+23:26:23,86 INFO     [run.py:64] ==================================================Logging Begins==================================================
+23:26:23,87 INFO     [run.py:65] --------------------Dataset selected: CICDDoS--------------------
+23:26:23,87 INFO     [prepare_data.py:171] ++ Data Preparation for CICDDoS dataset ++
+23:26:41,70 INFO     [prepare_data.py:26] **Dropped 12 columns with unique values: BwdPSHFlags FwdURGFlags BwdURGFlags FINFlagCount PSHFlagCount ECEFlagCount FwdAvgBytes/Bulk FwdAvgPackets/Bulk FwdAvgBulkRate BwdAvgBytes/Bulk BwdAvgPackets/Bulk BwdAvgBulkRate
+23:26:41,363 INFO     [prepare_data.py:29] **Dropped 17 additional columns: Unnamed:0, FlowID, SourceIP, DestinationIP, Timestamp, SimillarHTTP, FwdHeaderLength.1, FwdPacketLengthMean, BwdPacketLengthMean, FlowBytes/s, FlowPackets/s, FwdPackets/s, BwdPackets/s, MinPacketLength, MaxPacketLength, AvgFwdSegmentSize, AvgBwdSegmentSize
+23:27:03,515 INFO     [prepare_data.py:193] ** Processed file saved in: /Users/sharma/PycharmProjects/thesis/data/CICDDoS/processed **
+23:27:09,41 INFO     [utils.py:48] ** Categorical features encoded ordinally and saved in JSON
+23:27:10,504 INFO     [utils.py:62] ** MinMaxScaler object saved for the overall dataset
+23:27:40,92 INFO     [ids_models.py:167] -- Device set: cpu --
+23:27:46,463 INFO     [utils.py:113] ** Using scaled dataset **
+23:27:46,718 INFO     [ids_models.py:63] ____________________________________________________________________________________________________
+23:27:59,723 INFO     [metrics.py:16] accuracy score: 0.900
+23:27:59,948 INFO     [metrics.py:21] precision score: 0.967
+23:28:00,211 INFO     [metrics.py:26] recall score: 0.900
+23:28:00,483 INFO     [metrics.py:31] F-Score score: 0.916
+23:28:02,600 INFO     [metrics.py:36] AU-ROC score: 0.998
+23:28:02,734 INFO     [ids_models.py:81] ***** Feature importance vector saved in utils directory *****
+23:28:10,528 INFO     [utils.py:113] ** Using scaled dataset **
+23:28:10,924 INFO     [ids_models.py:103] ____________________________________________________________________________________________________
+23:31:06,27 INFO     [metrics.py:16] accuracy score: 0.884
+23:31:06,146 INFO     [metrics.py:21] precision score: 0.916
+23:31:06,278 INFO     [metrics.py:26] recall score: 0.884
+23:31:06,398 INFO     [metrics.py:31] F-Score score: 0.883
+23:31:07,331 INFO     [metrics.py:36] AU-ROC score: 0.987
+23:31:13,927 INFO     [utils.py:113] ** Using scaled dataset **
+23:31:14,177 INFO     [ids_models.py:123] ____________________________________________________________________________________________________
+23:31:15,464 INFO     [metrics.py:16] accuracy score: 0.397
+23:31:15,580 INFO     [metrics.py:21] precision score: 0.391
+23:31:15,704 INFO     [metrics.py:26] recall score: 0.397
+23:31:15,825 INFO     [metrics.py:31] F-Score score: 0.362
+23:31:16,351 INFO     [metrics.py:36] AU-ROC score: 0.754
+23:31:22,693 INFO     [utils.py:113] ** Using scaled dataset **
+23:31:22,947 INFO     [ids_models.py:150] ____________________________________________________________________________________________________
+00:29:09,998 INFO     [metrics.py:16] accuracy score: 0.628
+00:29:10,125 INFO     [metrics.py:21] precision score: 0.851
+00:29:10,255 INFO     [metrics.py:26] recall score: 0.628
+00:29:10,380 INFO     [metrics.py:31] F-Score score: 0.574
+00:29:10,951 INFO     [metrics.py:36] AU-ROC score: 0.776
+00:29:11,174 INFO     [model_utils.py:97] **** Model Hyper parameters: *****
+00:29:11,174 INFO     [model_utils.py:98] ____________________________________________________________________________________________________
+00:29:11,174 INFO     [model_utils.py:100] -- Batch Size: 256	 Epochs: 20	 lr: 0.001	 labels: 7	 features: 58 --
+00:29:13,427 INFO     [ids_models.py:172] -- Training Neural Network Model... --
+00:29:29,317 INFO     [ids_models.py:228] ** Epoch 1 | Train Loss: 0.39978 | Val Loss: 0.26812 | Train Acc: 84.015| Val Acc: 87.080 **
+00:29:43,717 INFO     [ids_models.py:228] ** Epoch 2 | Train Loss: 0.29225 | Val Loss: 0.26276 | Train Acc: 86.347| Val Acc: 87.032 **
+00:29:57,755 INFO     [ids_models.py:228] ** Epoch 3 | Train Loss: 0.28367 | Val Loss: 0.26256 | Train Acc: 86.549| Val Acc: 86.940 **
+00:30:20,471 INFO     [ids_models.py:228] ** Epoch 4 | Train Loss: 0.27989 | Val Loss: 0.25881 | Train Acc: 86.631| Val Acc: 87.095 **
+00:30:39,560 INFO     [ids_models.py:228] ** Epoch 5 | Train Loss: 0.27619 | Val Loss: 0.25634 | Train Acc: 86.707| Val Acc: 87.194 **
+00:30:59,276 INFO     [ids_models.py:228] ** Epoch 6 | Train Loss: 0.27349 | Val Loss: 0.25350 | Train Acc: 86.781| Val Acc: 87.278 **
+00:31:15,717 INFO     [ids_models.py:228] ** Epoch 7 | Train Loss: 0.27167 | Val Loss: 0.25437 | Train Acc: 86.849| Val Acc: 87.436 **
+00:31:28,606 INFO     [ids_models.py:228] ** Epoch 8 | Train Loss: 0.26986 | Val Loss: 0.25500 | Train Acc: 86.855| Val Acc: 87.366 **
+00:31:41,603 INFO     [ids_models.py:228] ** Epoch 9 | Train Loss: 0.26947 | Val Loss: 0.25116 | Train Acc: 86.846| Val Acc: 87.318 **
+00:32:00,160 INFO     [ids_models.py:228] ** Epoch 10 | Train Loss: 0.26795 | Val Loss: 0.25042 | Train Acc: 86.922| Val Acc: 87.327 **
+00:32:14,455 INFO     [ids_models.py:228] ** Epoch 11 | Train Loss: 0.26665 | Val Loss: 0.24985 | Train Acc: 86.918| Val Acc: 87.507 **
+00:32:27,771 INFO     [ids_models.py:228] ** Epoch 12 | Train Loss: 0.26448 | Val Loss: 0.25724 | Train Acc: 86.969| Val Acc: 86.630 **
+00:32:41,495 INFO     [ids_models.py:228] ** Epoch 13 | Train Loss: 0.26368 | Val Loss: 0.24901 | Train Acc: 87.018| Val Acc: 87.527 **
+00:32:55,227 INFO     [ids_models.py:228] ** Epoch 14 | Train Loss: 0.26331 | Val Loss: 0.24597 | Train Acc: 87.002| Val Acc: 87.582 **
+00:33:08,243 INFO     [ids_models.py:228] ** Epoch 15 | Train Loss: 0.26194 | Val Loss: 0.25454 | Train Acc: 87.042| Val Acc: 87.011 **
+00:33:20,947 INFO     [ids_models.py:228] ** Epoch 16 | Train Loss: 0.26138 | Val Loss: 0.24369 | Train Acc: 87.024| Val Acc: 87.619 **
+00:33:33,720 INFO     [ids_models.py:228] ** Epoch 17 | Train Loss: 0.26094 | Val Loss: 0.24364 | Train Acc: 87.077| Val Acc: 87.551 **
+00:33:46,431 INFO     [ids_models.py:228] ** Epoch 18 | Train Loss: 0.26044 | Val Loss: 0.24955 | Train Acc: 87.088| Val Acc: 87.309 **
+00:34:00,208 INFO     [ids_models.py:228] ** Epoch 19 | Train Loss: 0.25972 | Val Loss: 0.24435 | Train Acc: 87.075| Val Acc: 87.550 **
+00:34:13,194 INFO     [ids_models.py:228] ** Epoch 20 | Train Loss: 0.25920 | Val Loss: 0.24427 | Train Acc: 87.105| Val Acc: 87.512 **
+00:34:13,195 INFO     [ids_models.py:240] -- Fitting model on test dataset... --
+00:34:20,942 INFO     [ids_models.py:254] ____________________________________________________________________________________________________
+00:34:20,942 INFO     [ids_models.py:257] ***** Test Accuracy: 97.37955682630451 *****
+00:34:20,942 INFO     [ids_models.py:258] ____________________________________________________________________________________________________
+00:34:32,139 INFO     [adv_utils.py:157] ________________________________________________________________________________________________________________________
+00:34:32,140 INFO     [adv_utils.py:159] -- Initialising threat model for deepfool... --
+00:34:58,582 INFO     [adv_utils.py:49] -- Perturbation space saved in utils directory... --
+00:34:58,934 INFO     [adv_utils.py:112] ** Total features being perturbed: 46

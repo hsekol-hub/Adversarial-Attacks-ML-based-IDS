@@ -1,0 +1,66 @@
+16:48:01,161 INFO     [run.py:66] ==================================================Logging Begins==================================================
+16:48:01,161 INFO     [run.py:67] --------------------Dataset selected: CICIDS--------------------
+16:48:25,573 INFO     [utils.py:48] ** Categorical features encoded ordinally and saved in JSON
+16:48:39,627 INFO     [utils.py:62] ** MinMaxScaler object saved for the overall dataset
+16:51:15,975 INFO     [ids_models.py:183] -- Device set: cpu --
+16:51:47,596 INFO     [utils.py:113] ** Using scaled dataset **
+16:51:48,508 INFO     [ids_models.py:67] ____________________________________________________________________________________________________
+16:55:52,423 INFO     [metrics.py:10] Training Random Forest model...
+16:55:52,446 INFO     [metrics.py:15] accuracy score: 0.995
+16:55:52,605 INFO     [metrics.py:21] precision score: 0.995
+16:55:52,763 INFO     [metrics.py:27] recall score: 0.995
+16:55:52,917 INFO     [metrics.py:33] F-Score score: 0.995
+16:55:53,884 INFO     [metrics.py:39] AU-ROC score: 1.000
+16:55:53,937 INFO     [ids_models.py:86] ***** Feature importance vector saved in utils directory *****
+16:56:27,958 INFO     [utils.py:113] ** Using scaled dataset **
+16:56:28,818 INFO     [ids_models.py:109] ____________________________________________________________________________________________________
+17:19:10,921 INFO     [metrics.py:10] Training Linear SVC model...
+17:19:10,953 INFO     [metrics.py:15] accuracy score: 0.939
+17:19:11,106 INFO     [metrics.py:21] precision score: 0.941
+17:19:11,252 INFO     [metrics.py:27] recall score: 0.939
+17:19:11,401 INFO     [metrics.py:33] F-Score score: 0.935
+17:19:13,93 INFO     [metrics.py:39] AU-ROC score: 0.979
+17:19:35,463 INFO     [ids_models.py:131] ____________________________________________________________________________________________________
+17:19:43,676 INFO     [metrics.py:10] Training Bernoulli Naive Bayes model...
+17:19:43,705 INFO     [metrics.py:15] accuracy score: 0.663
+17:19:43,871 INFO     [metrics.py:21] precision score: 0.901
+17:19:44,49 INFO     [metrics.py:27] recall score: 0.663
+17:19:44,226 INFO     [metrics.py:33] F-Score score: 0.736
+17:19:45,210 INFO     [metrics.py:39] AU-ROC score: 0.886
+17:20:09,871 INFO     [utils.py:113] ** Using scaled dataset **
+17:20:10,705 INFO     [ids_models.py:162] ____________________________________________________________________________________________________
+18:21:55,189 INFO     [metrics.py:10] Training Gradient Boost Classifier model...
+18:21:55,224 INFO     [metrics.py:15] accuracy score: 0.959
+18:21:55,399 INFO     [metrics.py:21] precision score: 0.954
+18:21:55,569 INFO     [metrics.py:27] recall score: 0.959
+18:21:55,737 INFO     [metrics.py:33] F-Score score: 0.953
+18:21:56,923 INFO     [metrics.py:39] AU-ROC score: 0.989
+18:21:57,106 INFO     [model_utils.py:97] **** Model Hyper parameters: *****
+18:21:57,106 INFO     [model_utils.py:98] ____________________________________________________________________________________________________
+18:21:57,106 INFO     [model_utils.py:100] -- Batch Size: 256	 Epochs: 20	 lr: 0.001	 labels: 8	 features: 58 --
+18:22:19,791 INFO     [ids_models.py:188] -- Training Neural Network Model... --
+18:23:49,789 INFO     [ids_models.py:253]  |Train Loss: 0.15649 | Val Loss: 0.09861 | Train Acc: 94.358| Val Acc: 95.453
+18:25:15,739 INFO     [ids_models.py:253]  |Train Loss: 0.10667 | Val Loss: 0.09102 | Train Acc: 95.465| Val Acc: 95.524
+18:26:40,886 INFO     [ids_models.py:253]  |Train Loss: 0.09935 | Val Loss: 0.08300 | Train Acc: 95.629| Val Acc: 96.120
+18:28:05,723 INFO     [ids_models.py:253]  |Train Loss: 0.09562 | Val Loss: 0.08197 | Train Acc: 95.752| Val Acc: 96.167
+18:29:31,170 INFO     [ids_models.py:253]  |Train Loss: 0.09341 | Val Loss: 0.08093 | Train Acc: 95.816| Val Acc: 96.125
+18:30:55,747 INFO     [ids_models.py:253]  |Train Loss: 0.09194 | Val Loss: 0.08044 | Train Acc: 95.846| Val Acc: 96.277
+18:32:21,157 INFO     [ids_models.py:253]  |Train Loss: 0.09073 | Val Loss: 0.07973 | Train Acc: 95.877| Val Acc: 96.371
+18:33:45,747 INFO     [ids_models.py:253]  |Train Loss: 0.08996 | Val Loss: 0.07948 | Train Acc: 95.905| Val Acc: 96.361
+18:35:11,299 INFO     [ids_models.py:253]  |Train Loss: 0.08911 | Val Loss: 0.08040 | Train Acc: 95.923| Val Acc: 96.134
+18:36:37,970 INFO     [ids_models.py:253]  |Train Loss: 0.08860 | Val Loss: 0.07809 | Train Acc: 95.942| Val Acc: 96.370
+18:38:02,745 INFO     [ids_models.py:253]  |Train Loss: 0.08798 | Val Loss: 0.08102 | Train Acc: 95.960| Val Acc: 97.060
+18:39:28,614 INFO     [ids_models.py:253]  |Train Loss: 0.08731 | Val Loss: 0.07881 | Train Acc: 95.981| Val Acc: 96.160
+18:40:54,286 INFO     [ids_models.py:253]  |Train Loss: 0.08701 | Val Loss: 0.07778 | Train Acc: 95.999| Val Acc: 96.406
+18:42:20,83 INFO     [ids_models.py:253]  |Train Loss: 0.08673 | Val Loss: 0.07936 | Train Acc: 96.004| Val Acc: 95.652
+18:43:43,922 INFO     [ids_models.py:253]  |Train Loss: 0.08614 | Val Loss: 0.08186 | Train Acc: 96.035| Val Acc: 95.794
+18:45:08,757 INFO     [ids_models.py:253]  |Train Loss: 0.08608 | Val Loss: 0.07781 | Train Acc: 96.024| Val Acc: 95.508
+18:46:31,830 INFO     [ids_models.py:253]  |Train Loss: 0.08587 | Val Loss: 0.07720 | Train Acc: 96.030| Val Acc: 96.288
+18:47:58,222 INFO     [ids_models.py:253]  |Train Loss: 0.08557 | Val Loss: 0.07679 | Train Acc: 96.057| Val Acc: 96.413
+18:49:19,437 INFO     [ids_models.py:253]  |Train Loss: 0.08538 | Val Loss: 0.08259 | Train Acc: 96.051| Val Acc: 95.623
+18:50:43,870 INFO     [ids_models.py:253]  |Train Loss: 0.08478 | Val Loss: 0.07846 | Train Acc: 96.069| Val Acc: 97.214
+18:50:47,512 INFO     [ids_models.py:274] ** train_val_curve plot saved **
+18:50:47,513 INFO     [ids_models.py:286] -- Fitting model on test dataset... --
+18:51:33,513 INFO     [ids_models.py:337] ____________________________________________________________________________________________________
+18:51:33,513 INFO     [ids_models.py:340] ***** Test Accuracy: 97.19914104882459 *****
+18:51:33,513 INFO     [ids_models.py:341] ____________________________________________________________________________________________________

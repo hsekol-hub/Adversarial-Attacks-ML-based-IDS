@@ -1,0 +1,11 @@
+18:43:27,122 INFO     [run.py:67] ==================================================Logging Begins==================================================
+18:43:27,122 INFO     [run.py:68] --------------------Dataset selected: NSL-KDD--------------------
+18:43:28,641 INFO     [adv_utils.py:158] ________________________________________________________________________________________________________________________
+18:43:28,642 INFO     [adv_utils.py:160] -- Initialising threat model for lowprofool... --
+18:43:30,849 INFO     [adv_utils.py:49] -- Perturbation space saved in utils directory... --
+18:43:30,890 INFO     [adv_utils.py:113] ** Total features being perturbed: 20
+18:44:58,599 INFO     [metrics.py:11] Training Adversarial Setting model...
+18:44:58,605 INFO     [metrics.py:16] accuracy score: 0.227
+18:44:58,619 INFO     [metrics.py:22] precision score: 0.167
+18:44:58,631 INFO     [metrics.py:28] recall score: 0.227
+18:44:58,638 INFO     [metrics.py:34] F-Score score: 0.181

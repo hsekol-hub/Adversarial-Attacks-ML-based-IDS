@@ -1,0 +1,11 @@
+20:33:43,585 INFO     [run.py:67] ==================================================Logging Begins==================================================
+20:33:43,586 INFO     [run.py:68] --------------------Dataset selected: CICIDS--------------------
+20:34:27,737 INFO     [adv_utils.py:158] ________________________________________________________________________________________________________________________
+20:34:27,738 INFO     [adv_utils.py:160] -- Initialising threat model for lowprofool... --
+20:35:37,610 INFO     [adv_utils.py:49] -- Perturbation space saved in utils directory... --
+20:35:38,941 INFO     [adv_utils.py:113] ** Total features being perturbed: 38
+20:36:06,449 INFO     [metrics.py:11] Training Adversarial Setting model...
+20:36:06,452 INFO     [metrics.py:16] accuracy score: 0.219
+20:36:06,456 INFO     [metrics.py:22] precision score: 0.391
+20:36:06,459 INFO     [metrics.py:28] recall score: 0.219
+20:36:06,462 INFO     [metrics.py:34] F-Score score: 0.280

@@ -1,0 +1,7 @@
+23:44:06,89 INFO     [run.py:66] ==================================================Logging Begins==================================================
+23:44:06,90 INFO     [run.py:67] --------------------Dataset selected: CICDDoS--------------------
+23:44:06,90 INFO     [prepare_data.py:213] ++ Data Preparation for CICDDoS dataset ++
+23:44:33,675 INFO     [prepare_data.py:28] **Dropped 12 columns with unique values: BwdPSHFlags FwdURGFlags BwdURGFlags FINFlagCount PSHFlagCount ECEFlagCount FwdAvgBytes/Bulk FwdAvgPackets/Bulk FwdAvgBulkRate BwdAvgBytes/Bulk BwdAvgPackets/Bulk BwdAvgBulkRate
+23:44:34,79 INFO     [prepare_data.py:31] **Dropped 17 additional columns: Unnamed:0, FlowID, SourceIP, DestinationIP, Timestamp, SimillarHTTP, FwdHeaderLength.1, FwdPacketLengthMean, BwdPacketLengthMean, FlowBytes/s, FlowPackets/s, FwdPackets/s, BwdPackets/s, MinPacketLength, MaxPacketLength, AvgFwdSegmentSize, AvgBwdSegmentSize
+23:45:12,556 INFO     [viz.py:34] ** Class distribution plots saved **
+23:45:12,597 INFO     [prepare_data.py:249] ** Processed file saved in: /Users/sharma/PycharmProjects/thesis/data/CICDDoS/processed **
