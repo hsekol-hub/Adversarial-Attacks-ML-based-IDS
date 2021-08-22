@@ -1,27 +1,27 @@
 adv_config:
   capability:
-    batch_size: 64
+    batch_size: 16
     cor_weights: false
     perturb_threshold_features: 0.03
   deepfool:
     alpha: 0.001
     epsilon: 1.0e-05
-    max_iters: 2000
+    max_iters: 1000
     overshoot: 0.02
   goals: normal
   knowledge: test
   lowprofool:
     alpha: 0.01
-    lambda: 11.5
+    lambda: 8.5
     max_iters: 3000
-dataset: NSL-KDD
+dataset: CICDDoS
 dir_config:
   logs: /Users/sharma/PycharmProjects/Adversarial-Attacks-ML-based-IDS/logs
-  processed_data_dir: /Users/sharma/PycharmProjects/Adversarial-Attacks-ML-based-IDS/data/NSL-KDD/processed
-  raw_data_dir: /Users/sharma/PycharmProjects/Adversarial-Attacks-ML-based-IDS/data/NSL-KDD/raw
-  results: /Users/sharma/PycharmProjects/Adversarial-Attacks-ML-based-IDS/results/NSL-KDD
+  processed_data_dir: /Users/sharma/PycharmProjects/Adversarial-Attacks-ML-based-IDS/data/CICDDoS/processed
+  raw_data_dir: /Users/sharma/PycharmProjects/Adversarial-Attacks-ML-based-IDS/data/CICDDoS/raw
+  results: /Users/sharma/PycharmProjects/Adversarial-Attacks-ML-based-IDS/results/CICDDoS
   root_dir: /Users/sharma/PycharmProjects/Adversarial-Attacks-ML-based-IDS
-  utils: /Users/sharma/PycharmProjects/Adversarial-Attacks-ML-based-IDS/utils/NSL-KDD
+  utils: /Users/sharma/PycharmProjects/Adversarial-Attacks-ML-based-IDS/utils/CICDDoS
 model_config:
   batch_size: 256
   lr: 0.001

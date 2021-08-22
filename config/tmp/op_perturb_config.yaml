@@ -1,54 +1,74 @@
 CICDDoS:
+  binary_features:
+  - FwdPSHFlags
+  - SYNFlagCount
+  - RSTFlagCount
+  - ACKFlagCount
+  - URGFlagCount
+  - CWEFlagCount
+  - Inbound
   functional_features:
   - SourcePort
   - DestinationPort
   - Protocol
-  non_perturbed_features: null
+  non_perturbed_features:
+  - TotalLengthofFwdPackets
+  - PacketLengthMean
+  - FwdPacketLengthMin
+  - Init_Win_bytes_forward
+  - SubflowFwdBytes
+  - AveragePacketSize
+  - FwdPacketLengthMax
+  perturbed_features:
+  - BwdIATStd
+  - IdleStd
+  - BwdIATMin
+  - min_seg_size_forward
+  - BwdPacketLengthMin
+  - BwdIATMean
+  - PacketLengthStd
+  - SubflowBwdPackets
+  - TotalFwdPackets
+  - IdleMin
+  - FlowDuration
+  - BwdHeaderLength
+  - IdleMax
+  - BwdPacketLengthStd
+  - TotalLengthofBwdPackets
+  - FlowIATStd
+  - Down/UpRatio
+  - FlowIATMean
+  - FwdIATMin
+  - SubflowBwdBytes
+  - act_data_pkt_fwd
+  - ActiveStd
+  - FlowIATMax
+  - FwdHeaderLength
+  - ActiveMean
+  - FwdIATMean
+  - FwdPacketLengthStd
+  - PacketLengthVariance
+  - ActiveMin
+  - FwdIATTotal
+  - ActiveMax
+  - FlowIATMin
+  - BwdIATMax
+  - SubflowFwdPackets
+  - IdleMean
+  - BwdIATTotal
+  - Init_Win_bytes_backward
+  - FwdIATStd
+  - TotalBackwardPackets
+  - FwdIATMax
+  - BwdPacketLengthMax
 CICIDS:
   functional_features: null
   non_perturbed_features: null
 NSL-KDD:
-  binary_features:
-  - land
-  - logged_in
-  - root_shell
-  - is_host_login
-  - is_guest_login
   functional_features:
   - duration
   - protocol_type
   - service
   - flag
   non_perturbed_features:
-  - dst_host_srv_serror_rate
-  - dst_host_diff_srv_rate
-  - dst_host_srv_count
-  - same_srv_rate
-  - dst_host_same_src_port_rate
-  - dst_host_serror_rate
-  - dst_host_same_srv_rate
-  - serror_rate
-  - count
-  - dst_host_srv_diff_host_rate
-  - diff_srv_rate
-  perturbed_features:
-  - dst_host_rerror_rate
-  - num_failed_logins
-  - srv_rerror_rate
-  - num_shells
-  - srv_serror_rate
-  - src_bytes
-  - num_file_creations
-  - urgent
-  - srv_count
-  - rerror_rate
-  - dst_host_srv_rerror_rate
-  - num_root
-  - srv_diff_host_rate
-  - num_access_files
-  - dst_host_count
-  - hot
-  - su_attempted
-  - dst_bytes
-  - wrong_fragment
-  - num_compromised
+  - duration
