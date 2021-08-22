@@ -8,7 +8,7 @@ import absl
 from absl import app
 from absl import flags
 
-from core.utils import Directories
+from core.utils import Directories, DataLoader
 from core.prepare_data import FeatureEngineering
 from core.models.ids_models import train as train_ids_models
 from core.adv.adv_attacks import craft_ae
@@ -103,7 +103,7 @@ def set_base_directories():
 
 def main(argv):
 
-    FLAGS.dataset = 'NSL-KDD'
+    FLAGS.dataset = 'CICDDoS'
     print('Arguments: {}\n{}'.format(argv, '_' * 120))
     global config
     # Order not to be altered

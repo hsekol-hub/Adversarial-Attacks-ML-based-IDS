@@ -57,7 +57,7 @@ def load_utils(algo, rf_weights, utils_dir):
 
 #  ----------------------------------------------------------------- Base loading
 
-dataset, algo = 1, 1
+dataset, algo = 2, 1
 dict_ = {1: 'NSL-KDD',
          2: 'CICDDoS',
          3: 'CICIDS'}
@@ -96,30 +96,32 @@ def confusion_matrix_plot():
     ax[0].get_shared_y_axes().join(ax[1])
     g1 = sns.heatmap(data=cm, ax=ax[0], annot=True, fmt='d', cmap='Purples',
                      xticklabels=labels, yticklabels=labels,
-                     linewidths=0.5, cbar=False)
+                     linewidths=0.6, cbar=False)
     g1.set_ylabel('True Label', fontsize=12)
     g1.set_xlabel('Original Prediction', fontsize=12)
 
     g2 = sns.heatmap(data=adv_cm, ax=ax[1],
                           annot=True, fmt='d', cmap='Purples',
-                          linewidths=0.5,
-                          xticklabels=labels, yticklabels=False)
+                          linewidths=0.6,
+                          xticklabels=labels, yticklabels=False, cbar=False)
     g2.set_xlabel('Adversarial Prediction', fontsize=12)
 
     flag = True
     for _ in [ax[0], ax[1]]:
-        _.set_xticklabels(_.get_xticklabels(), rotation=90, fontsize=8)
+        _.set_xticklabels(_.get_xticklabels(), rotation=90, fontsize=10)
         if flag:
-            _.set_yticklabels(_.get_yticklabels(), rotation=0, fontsize=8)
+            _.set_yticklabels(_.get_yticklabels(), rotation=0, fontsize=10)
             flag = False
-    plt.suptitle(f'{dataset} - {algo} algorithm', fontsize=14)
+    # plt.suptitle(f'{dataset} - {algo} algorithm', fontsize=14)
     ax[0].set_aspect('equal', adjustable='box')
     ax[1].set_aspect('equal', adjustable='box')
-    plt.savefig(os.path.join(results_dir, 'plots',  algo+'_cm.png'))
+    plt.savefig(os.path.join(results_dir, 'plots',  algo+'_' + dataset +'_cm.png'))
     plt.show()
     plt.close()
 
-# confusion_matrix_plot()
+confusion_matrix_plot()
+
+
 
 #  ----------------------------------------------------------------- Perturbation per column VS weights
 
@@ -128,9 +130,9 @@ feature_cols = test.columns[:-1]
 s_adv = adv[(adv.target_pred == adv.adv_pred) | ((adv.Label == 0) & (adv.adv_pred != -1))]
 s_test = test.loc[s_adv.index]
 
-m_iters = np.round(np.median(s_adv.best_iter))
-m_perceptibility = np.round(np.median(s_adv.perceptibility))
-m_p_distance = np.round(np.median(s_adv.perturbation_norm))
+# m_iters = np.round(np.median(s_adv.best_iter))
+# m_perceptibility = np.round(np.median(s_adv.perceptibility))
+# m_p_distance = np.round(np.median(s_adv.perturbation_norm))
 
 f_i = s_test[feature_cols].values
 f_i_prime = s_adv[feature_cols].values
@@ -169,9 +171,9 @@ def bar_plot():
               ncol=3, fancybox=True, shadow=True, fontsize=8)
     ax[1].set_ylabel('Difference')
     ax[1].grid(zorder=5, color='gray')
-    plt.xticks(rotation=90, fontsize=6)
-    plt.suptitle(f'{dataset}- C-{algo} algorithm', fontsize=12)
-    plt.savefig(os.path.join(results_dir, 'plots', algo + '_feats_perturbed.png'))
+    plt.xticks(rotation=90, fontsize=8)
+    plt.suptitle(f'C-{algo} algorithm', fontsize=12)
+    plt.savefig(os.path.join(results_dir, 'plots', algo +'_' + dataset + '_feats_perturbed.png'))
     plt.show()
     plt.close()
 
@@ -206,7 +208,7 @@ def plot_heatmap(adv_percep, diff, orig_percep, title, filename):
     for (i, ax), df in zip(enumerate(axn.flat), [adv_percep, diff, orig_percep]):
         sns.heatmap(df, ax=ax,
                     cbar=i==0, yticklabels=False, xticklabels=i==2,
-                    vmin=0, vmax=1, cmap='gist_gray_r',
+                    vmin=0, vmax=0.5, cmap='gist_gray_r',
                     cbar_ax=None if i else cbar_ax)
 
     axn[0].set_ylabel('Original', fontsize=10)
@@ -216,29 +218,31 @@ def plot_heatmap(adv_percep, diff, orig_percep, title, filename):
     axn[2].set_aspect(2, adjustable='box', share=True)
     axn[2].set_xticklabels(axn[2].get_xticklabels(), rotation=90, fontsize=8)
     plt.suptitle(title, fontsize=12)
-    plt.savefig(os.path.join(results_dir, 'plots', filename + '_perceptible.png'))
+    plt.savefig(os.path.join(results_dir, 'plots', filename +'_' + dataset + '_perceptible.png'))
     plt.show()
     plt.close()
 
 
-feature_cols = test.columns[:-1]
-# Highest Perceptible Sample
-h_adv_percep = s_adv[s_adv.perceptibility.max() == s_adv.perceptibility]
-h_original = s_test.loc[h_adv_percep.index]
-adv_pred, orig_pred = s_adv.loc[h_adv_percep.index].adv_pred.values[0], s_adv.loc[h_adv_percep.index].orig_pred.values[0]
-adv_percep, orig_percep, diff, adv_conf, orig_conf = heatmap_1d(h_adv_percep, h_original, feature_cols)
-title = f'Original pred: {encoder[orig_pred]}-{orig_conf.values[0]} % ---> Adversarial pred: {encoder[adv_pred]}-{adv_conf.values[0]} %'
 
-# plot_heatmap(adv_percep, diff, orig_percep, title, 'highest')
+if algo == 'lowprofool':
+    feature_cols = test.columns[:-1]
+    # Highest Perceptible Sample
+    h_adv_percep = s_adv[s_adv.perceptibility.max() == s_adv.perceptibility]
+    h_original = s_test.loc[h_adv_percep.index]
+    adv_pred, orig_pred = s_adv.loc[h_adv_percep.index].adv_pred.values[0], s_adv.loc[h_adv_percep.index].Label.values[0]
+    adv_percep, orig_percep, diff, adv_conf, orig_conf = heatmap_1d(h_adv_percep, h_original, feature_cols)
+    title = f'Original pred: {encoder[orig_pred]}-{orig_conf.values[0]} % ---> Adversarial pred: {encoder[adv_pred]}-{adv_conf.values[0]} %'
 
-# Lowest Perceptible Sample
-l_adv_percep = s_adv[s_adv.perceptibility.min() == s_adv.perceptibility]
-l_original = s_test.loc[l_adv_percep.index]
-adv_pred, orig_pred = s_adv.loc[l_adv_percep.index].adv_pred.values[0], s_adv.loc[l_adv_percep.index].orig_pred.values[0]
-adv_percep, orig_percep, diff, adv_conf, orig_conf = heatmap_1d(l_adv_percep, l_original, feature_cols)
-title = f'Original pred: {encoder[orig_pred]}-{orig_conf.values[0]} % ---> Adversarial pred: {encoder[adv_pred]}-{adv_conf.values[0]} %'
+    plot_heatmap(adv_percep, diff, orig_percep, title, 'highest')
 
-# plot_heatmap(adv_percep, diff, orig_percep, title, 'lowest')
+    # Lowest Perceptible Sample
+    l_adv_percep = s_adv[s_adv.perceptibility.min() == s_adv.perceptibility]
+    l_original = s_test.loc[l_adv_percep.index]
+    adv_pred, orig_pred = s_adv.loc[l_adv_percep.index].adv_pred.values[0], s_adv.loc[l_adv_percep.index].Label.values[0]
+    adv_percep, orig_percep, diff, adv_conf, orig_conf = heatmap_1d(l_adv_percep, l_original, feature_cols)
+    title = f'Original pred: {encoder[orig_pred]}-{orig_conf.values[0]} % ---> Adversarial pred: {encoder[adv_pred]}-{adv_conf.values[0]} %'
+
+    plot_heatmap(adv_percep, diff, orig_percep, title, 'lowest')
 
 
 print('Hold')

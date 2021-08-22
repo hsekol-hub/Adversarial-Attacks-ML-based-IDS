@@ -46,8 +46,6 @@ def evaluate_adv_set(test, adv, weights, scaler, algo='lowprofool'):
           format(ascore, percep, pd, sr))
     return acc, pre, re, f_support, sr, pd, percep, ascore
 
-
-
 def encode(data, encoder, adv_flag=False):
     cat_cols = list(encoder.keys())
     for col in cat_cols:
@@ -78,7 +76,7 @@ def craft_ae(config, n_samples = None):
     dict_ = {1: 'lowprofool',
              2: 'deepfool'}
 
-    n_samples = None
+    n_samples = 256
     for algo in selection:
         algo = dict_[algo]
         threat_model = tmObj.define(algo)
