@@ -1,0 +1,11 @@
+14:43:40,445 INFO     [run.py:67] ==================================================Logging Begins==================================================
+14:43:40,445 INFO     [run.py:68] --------------------Dataset selected: CICDDoS--------------------
+14:43:52,822 INFO     [adv_utils.py:158] ________________________________________________________________________________________________________________________
+14:43:52,823 INFO     [adv_utils.py:160] -- Initialising threat model for lowprofool... --
+14:44:23,935 INFO     [adv_utils.py:49] -- Perturbation space saved in utils directory... --
+14:44:24,306 INFO     [adv_utils.py:113] ** Total features being perturbed: 43
+15:01:51,781 INFO     [metrics.py:11] Training Adversarial Setting model...
+15:01:51,786 INFO     [metrics.py:16] accuracy score: 0.579
+15:01:51,793 INFO     [metrics.py:22] precision score: 0.748
+15:01:51,798 INFO     [metrics.py:28] recall score: 0.579
+15:01:51,803 INFO     [metrics.py:34] F-Score score: 0.576

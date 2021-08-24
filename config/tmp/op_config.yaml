@@ -1,19 +1,19 @@
 adv_config:
   capability:
-    batch_size: 16
+    batch_size: 64
     cor_weights: false
-    perturb_threshold_features: 0.03
+    perturb_threshold_features: 0.05
   deepfool:
     alpha: 0.001
     epsilon: 1.0e-05
-    max_iters: 1000
+    max_iters: 2000
     overshoot: 0.02
-  goals: normal
+  goals: both
   knowledge: test
   lowprofool:
     alpha: 0.01
-    lambda: 8.5
-    max_iters: 3000
+    lambda: 11.5
+    max_iters: 2000
 dataset: CICDDoS
 dir_config:
   logs: /Users/sharma/PycharmProjects/Adversarial-Attacks-ML-based-IDS/logs

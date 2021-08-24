@@ -13,54 +13,54 @@ CICDDoS:
   - Protocol
   non_perturbed_features:
   - TotalLengthofFwdPackets
-  - PacketLengthMean
-  - FwdPacketLengthMin
-  - Init_Win_bytes_forward
-  - SubflowFwdBytes
   - AveragePacketSize
+  - PacketLengthMean
   - FwdPacketLengthMax
+  - FwdPacketLengthMin
   perturbed_features:
-  - BwdIATStd
-  - IdleStd
-  - BwdIATMin
-  - min_seg_size_forward
+  - FwdIATStd
+  - IdleMean
+  - SubflowFwdPackets
+  - IdleMax
+  - FwdIATTotal
+  - Down/UpRatio
+  - FlowIATStd
+  - SubflowBwdPackets
+  - Init_Win_bytes_backward
+  - act_data_pkt_fwd
+  - SubflowFwdBytes
   - BwdPacketLengthMin
+  - BwdIATMax
+  - ActiveMean
+  - BwdHeaderLength
+  - FlowIATMax
+  - BwdIATMin
+  - SubflowBwdBytes
+  - IdleStd
+  - FwdPacketLengthStd
+  - FwdIATMean
+  - PacketLengthVariance
+  - Init_Win_bytes_forward
   - BwdIATMean
   - PacketLengthStd
-  - SubflowBwdPackets
-  - TotalFwdPackets
-  - IdleMin
-  - FlowDuration
-  - BwdHeaderLength
-  - IdleMax
-  - BwdPacketLengthStd
-  - TotalLengthofBwdPackets
-  - FlowIATStd
-  - Down/UpRatio
+  - BwdIATStd
   - FlowIATMean
-  - FwdIATMin
-  - SubflowBwdBytes
-  - act_data_pkt_fwd
-  - ActiveStd
-  - FlowIATMax
-  - FwdHeaderLength
-  - ActiveMean
-  - FwdIATMean
-  - FwdPacketLengthStd
-  - PacketLengthVariance
-  - ActiveMin
-  - FwdIATTotal
-  - ActiveMax
-  - FlowIATMin
-  - BwdIATMax
-  - SubflowFwdPackets
-  - IdleMean
-  - BwdIATTotal
-  - Init_Win_bytes_backward
-  - FwdIATStd
-  - TotalBackwardPackets
-  - FwdIATMax
+  - min_seg_size_forward
+  - FlowDuration
+  - TotalFwdPackets
   - BwdPacketLengthMax
+  - FwdHeaderLength
+  - FwdIATMax
+  - ActiveMax
+  - IdleMin
+  - TotalBackwardPackets
+  - FlowIATMin
+  - BwdPacketLengthStd
+  - ActiveMin
+  - TotalLengthofBwdPackets
+  - FwdIATMin
+  - BwdIATTotal
+  - ActiveStd
 CICIDS:
   functional_features: null
   non_perturbed_features: null
@@ -70,5 +70,7 @@ NSL-KDD:
   - protocol_type
   - service
   - flag
+  - hot
+  - srv_rerror_rate
   non_perturbed_features:
   - duration

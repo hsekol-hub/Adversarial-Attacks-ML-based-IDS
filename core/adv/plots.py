@@ -57,7 +57,7 @@ def load_utils(algo, rf_weights, utils_dir):
 
 #  ----------------------------------------------------------------- Base loading
 
-dataset, algo = 2, 1
+dataset, algo = 1, 1
 dict_ = {1: 'NSL-KDD',
          2: 'CICDDoS',
          3: 'CICIDS'}
@@ -127,6 +127,7 @@ confusion_matrix_plot()
 
 threshold = 0
 feature_cols = test.columns[:-1]
+adv = adv.dropna()
 s_adv = adv[(adv.target_pred == adv.adv_pred) | ((adv.Label == 0) & (adv.adv_pred != -1))]
 s_test = test.loc[s_adv.index]
 
@@ -171,7 +172,7 @@ def bar_plot():
               ncol=3, fancybox=True, shadow=True, fontsize=8)
     ax[1].set_ylabel('Difference')
     ax[1].grid(zorder=5, color='gray')
-    plt.xticks(rotation=90, fontsize=8)
+    plt.xticks(rotation=90, fontsize=7)
     plt.suptitle(f'C-{algo} algorithm', fontsize=12)
     plt.savefig(os.path.join(results_dir, 'plots', algo +'_' + dataset + '_feats_perturbed.png'))
     plt.show()
@@ -227,11 +228,13 @@ def plot_heatmap(adv_percep, diff, orig_percep, title, filename):
 if algo == 'lowprofool':
     feature_cols = test.columns[:-1]
     # Highest Perceptible Sample
-    h_adv_percep = s_adv[s_adv.perceptibility.max() == s_adv.perceptibility]
+    # s_adv = s_adv[s_adv.adv_confidence>0.5]
+    h_adv_percep = s_adv[(s_adv.perceptibility.max() == s_adv.perceptibility)]
     h_original = s_test.loc[h_adv_percep.index]
     adv_pred, orig_pred = s_adv.loc[h_adv_percep.index].adv_pred.values[0], s_adv.loc[h_adv_percep.index].Label.values[0]
     adv_percep, orig_percep, diff, adv_conf, orig_conf = heatmap_1d(h_adv_percep, h_original, feature_cols)
-    title = f'Original pred: {encoder[orig_pred]}-{orig_conf.values[0]} % ---> Adversarial pred: {encoder[adv_pred]}-{adv_conf.values[0]} %'
+    title = f'Highest Original pred: {encoder[orig_pred]}-{orig_conf.values[0]} % ---> Adversarial pred: {encoder[adv_pred]}-{adv_conf.values[0]} %'
+    title = f'Original pred: {encoder[orig_pred]} ---> Adversarial pred: {encoder[adv_pred]}'
 
     plot_heatmap(adv_percep, diff, orig_percep, title, 'highest')
 
@@ -241,6 +244,7 @@ if algo == 'lowprofool':
     adv_pred, orig_pred = s_adv.loc[l_adv_percep.index].adv_pred.values[0], s_adv.loc[l_adv_percep.index].Label.values[0]
     adv_percep, orig_percep, diff, adv_conf, orig_conf = heatmap_1d(l_adv_percep, l_original, feature_cols)
     title = f'Original pred: {encoder[orig_pred]}-{orig_conf.values[0]} % ---> Adversarial pred: {encoder[adv_pred]}-{adv_conf.values[0]} %'
+    title = f'Original pred: {encoder[orig_pred]} ---> Adversarial pred: {encoder[adv_pred]} %'
 
     plot_heatmap(adv_percep, diff, orig_percep, title, 'lowest')
 

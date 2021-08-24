@@ -5,6 +5,8 @@ NSL-KDD:
     - protocol_type
     - service
     - flag
+    - hot
+    - srv_rerror_rate
   non_perturbed_features:
     - duration
 CICDDoS:

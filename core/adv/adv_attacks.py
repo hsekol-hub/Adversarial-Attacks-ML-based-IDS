@@ -76,7 +76,7 @@ def craft_ae(config, n_samples = None):
     dict_ = {1: 'lowprofool',
              2: 'deepfool'}
 
-    n_samples = 256
+    n_samples = 4096
     for algo in selection:
         algo = dict_[algo]
         threat_model = tmObj.define(algo)

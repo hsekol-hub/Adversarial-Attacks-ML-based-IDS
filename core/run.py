@@ -103,6 +103,7 @@ def set_base_directories():
 
 def main(argv):
 
+    FLAGS.dataset = 'NSL-KDD'
     FLAGS.dataset = 'CICDDoS'
     print('Arguments: {}\n{}'.format(argv, '_' * 120))
     global config
