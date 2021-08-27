@@ -1,0 +1,7 @@
+Dataset,#Samples,#Labels,Algorithm,Accuracy,Precision,Recall,F1 Score,Success Rate,Perturb distance,Perceptibility,Attack Score,Transfer Success,Capability,Setting,Labels
+NSL-KDD,1024,5,lowprofool,0.113,0.102,0.113,0.107,0.9072,0.317,5.85,78.73,NA,"{'batch_size': 64, 'cor_weights': False, 'perturb_threshold_features': 0.05}","{'max_iters': 2000, 'alpha': 0.01, 'lambda': 4.5}",[0 3 1 2 4]
+NSL-KDD,1024,5,lowprofool,0.109,0.099,0.109,0.104,0.9102,0.319,5.67,79.84,NA,"{'batch_size': 64, 'cor_weights': False, 'perturb_threshold_features': 0.05}","{'max_iters': 2000, 'alpha': 0.01, 'lambda': 4.5}",[0 3 1 2 4]
+NSL-KDD,1024,5,lowprofool,0.113,0.103,0.113,0.108,0.9072,0.315,,,NA,"{'batch_size': 64, 'cor_weights': False, 'perturb_threshold_features': 0.05}","{'max_iters': 2000, 'alpha': 0.01, 'lambda': 4.5}",[0 3 1 2 4]
+NSL-KDD,1024,5,lowprofool,0.115,0.103,0.115,0.109,0.9053,0.326,5.61,79.81,NA,"{'batch_size': 64, 'cor_weights': False, 'perturb_threshold_features': 0.05}","{'max_iters': 2000, 'alpha': 0.01, 'lambda': 4.5}",[0 3 1 2 4]
+NSL-KDD,1024,5,lowprofool,0.122,0.109,0.122,0.115,0.8994,0.307,5.65,84.41,NA,"{'batch_size': 64, 'cor_weights': False, 'perturb_threshold_features': 0.05}","{'max_iters': 2000, 'alpha': 0.01, 'lambda': 4.5}",[0 3 1 2 4]
+NSL-KDD,,5,lowprofool,0.112,0.102,0.112,0.107,0.9064,0.325,,,NA,"{'batch_size': 64, 'cor_weights': False, 'perturb_threshold_features': 0.05}","{'max_iters': 2000, 'alpha': 0.01, 'lambda': 4.5}",[0 3 1 2 4]
