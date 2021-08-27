@@ -25,14 +25,7 @@ pip install -r requirement.txt
 
 ### Process data
 First, unzip and unpack the data files 
-```
-tar -zxvf data-release.tar.gz
-```
-For the three ICEWS datasets `ICEWS18`, `ICEWS14`, `ICEWS05-15`, go into the dataset folder in the `./data` directory and run the following command to construct the static graph.
-```
-cd ./data/<dataset>
-python ent2word.py
-```
+
 
 ### Train models
 Then the following commands can be used to train the proposed models. By default, dev set evaluation results will be printed when training terminates.
