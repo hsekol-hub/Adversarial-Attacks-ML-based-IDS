@@ -26,19 +26,19 @@ def evaluate_adv_set(test, adv, weights, scaler, algo='lowprofool'):
     s_adv = adv[(adv.target_pred == adv.adv_pred) | ((adv.Label == 0) & (adv.adv_pred != -1))]
     s_test = test.loc[s_adv.index]
     feature_cols = test.columns[:-1]
-
+    # convert into ndarray
     f_i = s_test[feature_cols].values
     f_i_prime = s_adv[feature_cols].values
     f_i = scaler.transform(f_i)
     f_i_prime = scaler.transform(f_i_prime)
 
-    sr = metrics.success_rate(adv)
+    sr = metrics.success_rate(adv)  # as per Section 2
     ascore = metrics.attack_score(f_i, f_i_prime, weights, s_adv)
 
     if algo == 'lowprofool':
         pd = metrics.perturb_distance(s_adv)
         percep = metrics.perceptibility(f_i, f_i_prime, weights)
-    else:
+    else:  # in deepfool perceptibility is not calculated
         percep = '-1'
         pd = metrics.perturb_distance2(f_i, f_i_prime)
 
@@ -46,7 +46,7 @@ def evaluate_adv_set(test, adv, weights, scaler, algo='lowprofool'):
           format(ascore, percep, pd, sr))
     return acc, pre, re, f_support, sr, pd, percep, ascore
 
-def encode(data, encoder, adv_flag=False):
+def encode(data, encoder: dict, adv_flag=False):  # encode the dataset
     cat_cols = list(encoder.keys())
     for col in cat_cols:
         data[col] = data[col].map(encoder[col])
@@ -59,11 +59,11 @@ def encode(data, encoder, adv_flag=False):
     return data
 
 
-def craft_ae(config, n_samples = None):
+def craft_ae(config: dict, n_samples=None):  # main module to craft adversarial attacks
 
     tmObj = ThreatModel(config)
     advUtilsObj = AdversarialUtilities(config)
-
+    # take user input for the attack algorithm
     print('_________________________________\n'
           'Select an attack algorithm:\n'
           '1. Lowprofool\n'
@@ -76,22 +76,26 @@ def craft_ae(config, n_samples = None):
     dict_ = {1: 'lowprofool',
              2: 'deepfool'}
 
-    n_samples = 4096
     for algo in selection:
         algo = dict_[algo]
+        # define the threat model
         threat_model = tmObj.define(algo)
+        # load utility objects required for the adversary
         model, data, data_loader, scaler, weights, encoder, perturbation_space, mask\
             = advUtilsObj.load_utils(threat_model=threat_model,
                                      n_samples=n_samples)
-        model.eval()
+        model.eval()  # ensures model weights do not change under any circumstance
         multiplicity, lower_bounds, upper_bounds = advUtilsObj.fetch_bounds(encoder)
 
+        # main algorithm execution
         if algo == 'lowprofool':
             test_set, adv_set = lowprofool(advUtilsObj, threat_model, model, data_loader, data, scaler, weights,
                                               encoder, mask, multiplicity, lower_bounds, upper_bounds)
         elif algo == 'deepfool':
             test_set, adv_set = deepfool(advUtilsObj, threat_model, model, data_loader, data, scaler, weights,
                                             encoder, mask, multiplicity, lower_bounds, upper_bounds)
+
+        # save the generated adversarial set and its respective test set
         test_set.to_csv(os.path.join(tmObj.results_dir, 'adv', algo + '_test_samples.csv'), index=False)
         adv_set.to_csv(os.path.join(tmObj.results_dir, 'adv', algo + '_adv_samples.csv'), index=False)
 
@@ -116,6 +120,7 @@ def craft_ae(config, n_samples = None):
                            'Success Rate', 'Perturb distance', 'Perceptibility',
                            'Attack Score', 'Transfer Success', 'Capability', 'Setting', 'Labels']
 
+        # populate results of multiple experiments in a single .csv file
         if not os.path.exists(reports_pth):
             reports.to_csv(reports_pth, mode='w', header=True, index=False)
             print('New report file generated')

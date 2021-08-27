@@ -4,7 +4,7 @@ import logging
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score,\
     roc_auc_score
 
-class SkLearnMetrics(object):
+class SkLearnMetrics(object):  # use the base metrics from scikit learn
 
     def __init__(self, name):
         self.classifier = name
@@ -41,22 +41,22 @@ class SkLearnMetrics(object):
         return np.round(roc, 3)
 
 class CustomMetrics(object):
+    '''
+    Custom metrics for evaluating neural network and adversarial robustenss.
+    '''
 
     def __init__(self):
         pass
 
-
     def accuracy(self, y_pred, y_true):
         y_pred_softmax = torch.log_softmax(y_pred, dim=1)
         _, y_pred_tags = torch.max(y_pred_softmax, dim=1)
-
         correct_pred = (y_pred_tags == y_true).float()
         acc = correct_pred.sum() / len(correct_pred)
         acc = torch.round(acc * 100)
         return np.round(acc, 3), y_pred_tags
 
     def precision(self, y_pred, y_true):
-
         y_pred_softmax = torch.log_softmax(y_pred, dim=1)
         _, y_pred_tags = torch.max(y_pred_softmax, dim=1)
         pre = precision_score(y_true, y_pred_tags, average='weighted')
@@ -81,6 +81,7 @@ class CustomMetrics(object):
         return np.round(roc, 3)
 
     def custom_softmax(self, latent_output):
+        # get the max or second max if target is ground truth in the max position.
         y_pred = torch.log_softmax(latent_output, axis=1)
         _, top3 = torch.topk(y_pred, 3)
         y_pred = top3[:, 0]
@@ -119,12 +120,12 @@ class CustomMetrics(object):
         return ascore
 
     def perturb_distance2(self, f_i, f_i_prime):
-
         f_i, f_i_prime = torch.tensor(f_i), torch.tensor(f_i_prime)
         perturb_l2_norm = lambda x, y: torch.sqrt(torch.sum(torch.abs(x - y) ** 2, dim=1))
         perturb_norm = perturb_l2_norm(f_i, f_i_prime)
         perturb_norm = np.round(torch.mean(perturb_norm), 3)
         return perturb_norm.numpy()
 
+    # TODO
     def transfer_success(self):
         pass

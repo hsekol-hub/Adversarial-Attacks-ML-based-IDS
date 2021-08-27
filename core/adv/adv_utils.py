@@ -12,7 +12,7 @@ from core.models.model_utils import ModelUtilities, Network, ClassifierDataset
 
 class ConstraintSpace(ModelUtilities):
 
-    def __init__(self, config):
+    def __init__(self, config: dict):
         super().__init__(config)
         pass
 
@@ -20,7 +20,8 @@ class ConstraintSpace(ModelUtilities):
         return dict(zip(dictionary.values(), dictionary.keys()))
 
     def generate_perturb_space(self, data):
-
+        # creates a perturbation space for each label of the dataset.
+        # load the encoder object
         with open(os.path.join(self.utils_dir, 'encoder.json'), 'r') as file:
             encoder = json.load(file)
 
@@ -36,7 +37,7 @@ class ConstraintSpace(ModelUtilities):
                 if col not in label_cols:  # except the label itself
                     multiplicity = 'categorical' if subset[col].dtype == 'object' else 'numerical'
                     lb, ub = min(subset[col]), max(subset[col])
-                    if multiplicity == 'numerical':
+                    if multiplicity == 'numerical':  # append the multiplicity label for each feature
                         _ = [1 if value % 1 == 0 else 0 for value in subset[col]]
                         multiplicity = 'discrete' if sum(_) == len(subset) else 'continuous'
                         lb, ub = min(subset[col]), max(subset[col])
@@ -49,7 +50,7 @@ class ConstraintSpace(ModelUtilities):
         logging.info('-- Perturbation space saved in utils directory... --')
 
     def generate_cor_weights(self, data):
-
+        # generate a feature importance vector based on Pearson's coefficient formulation.
         cor = data.corr()
         cor = abs(cor['Label'])
         cor_weights = cor[:-1]
@@ -61,19 +62,18 @@ class ConstraintSpace(ModelUtilities):
         logging.info('-- co-relation weight vector saved in utils directory')
 
     def generate_masks(self, data, threshold=None, cor_weights=False):
-
+        # creates a mask vector. 1 denotes perturbation os possible and 0 means those features can't be manipulated.
         with open(os.path.join(self.root_dir, 'config', 'ip_perturb_config.yaml'), 'r') as stream:
             pertub_config = yaml.safe_load(stream)
 
         feature_names = list(data.columns)
         feature_names.remove('Label')
-
         masking_config = pertub_config[self.dataset]
         functional_features = [] if masking_config['functional_features'] is None else masking_config['functional_features']
         non_perturbed_features = [] if masking_config['non_perturbed_features'] is None else masking_config['non_perturbed_features']
 
         # -----------------------------------------------------------------------------
-        if threshold is not None:
+        if threshold is not None:  # idea is to not perturb which are significant. threshold sets a cut-off in percentage
             if cor_weights:
                 print('Considering co-relation weight vector')
                 with open(os.path.join(self.utils_dir, 'cor_feature_importance.json'), 'r') as file:
@@ -88,24 +88,23 @@ class ConstraintSpace(ModelUtilities):
             non_perturbed_features += threshold_features
         # -----------------------------------------------------------------------------
 
-        binary_check = set([0, 1])
+        binary_check = set([0, 1])  # we do not want to manipulate the binary features as well.
         binary_features = [col for col in feature_names if set(data[col].unique()) == binary_check]
         non_perturbed_features = list(set(non_perturbed_features) - set(binary_features) - set(functional_features))
-
+        # a list of all features which are to be manipulated
         pertubed_features = list(
             set(feature_names) - set(functional_features) - set(non_perturbed_features) - set(binary_features))
         mask = [1 if col in pertubed_features else 0 for col in feature_names]
         mask_dict = {k: v for k, v in zip(data.columns[:-1], mask)}
-
+        # save this inffile information in a .YAML in the config directory
         masking_config['binary_features'] = binary_features
         masking_config['perturbed_features'] = pertubed_features
         masking_config['non_perturbed_features'] = non_perturbed_features
         pertub_config[self.dataset] = masking_config
 
         # -----------------------------------------------------------------------------
-
         with open(os.path.join(self.utils_dir, 'mask.json'), 'w') as file:
-            json.dump(mask_dict, file, indent=4)
+            json.dump(mask_dict, file, indent=4)  # save the masking information; to be used by the adversary
 
         with open(os.path.join(self.root_dir, 'config', 'tmp', 'op_perturb_config.yaml'), 'w') as stream:
             yaml.dump(pertub_config, stream)
@@ -113,19 +112,19 @@ class ConstraintSpace(ModelUtilities):
         logging.info('** Total features being perturbed: {}'.format(len(pertubed_features)))
 
 
-
+# Define our threat model
 class ThreatModel(ModelUtilities):
 
-    def __init__(self, config):
+    def __init__(self, config: dict):
         super().__init__(config)
         self.config = config
         self.adv_config = config['adv_config']
 
-    def adversary_goals(self, threat_model):
+    def adversary_goals(self, threat_model: dict) -> dict:
         threat_model['target'] = self.adv_config['goals']
         return threat_model
 
-    def adversary_knowledge(self, threat_model):
+    def adversary_knowledge(self, threat_model: dict) -> dict:
 
         threat_model['knowledge'] = self.adv_config['knowledge']
         train = pd.read_csv(os.path.join(self.processed_data_dir, 'train.csv'))
@@ -134,7 +133,7 @@ class ThreatModel(ModelUtilities):
         data = self.encode(data)
         return threat_model, data
 
-    def adversary_capabilities(self, algorithm, threat_model):
+    def adversary_capabilities(self, algorithm: str, threat_model: dict) -> dict:
 
         threat_model['threshold'] = self.adv_config['capability']['perturb_threshold_features']
         threat_model['cor_weights'] = self.adv_config['capability']['cor_weights']
@@ -152,7 +151,7 @@ class ThreatModel(ModelUtilities):
         return threat_model
 
 
-    def define(self, algorithm):
+    def define(self, algorithm: str) -> dict:  # defines the threat model based on [goals, knowledge, capabilities]
 
         print('_'*120)
         logging.info('_'*120)
@@ -166,20 +165,17 @@ class ThreatModel(ModelUtilities):
 
         csObj = ConstraintSpace(self.config)
         csObj.generate_perturb_space(data=data)
-        # csObj.generate_cor_weights(data=data)
-        csObj.generate_masks(data=data,
-                             threshold=threat_model['threshold'],
-                             cor_weights=threat_model['cor_weights'])
+        csObj.generate_masks(data=data, threshold=threat_model['threshold'], cor_weights=threat_model['cor_weights'])
         return threat_model
 
 
 class AdversarialUtilities(ThreatModel):
-    def __init__(self, config):
+    def __init__(self, config: ictd):
         super().__init__(config)
         pass
         # self.threat_model, self.data = self.define()
 
-    def load_utils(self, threat_model, n_samples=None):
+    def load_utils(self, threat_model: dict, n_samples=None):  # load all utility object
 
         model = Network(self.n_features, self.n_class, self.n_hidden)
         model.load_state_dict(torch.load(os.path.join(self.results_dir, 'models', 'dnn_model.pth')))
@@ -209,7 +205,7 @@ class AdversarialUtilities(ThreatModel):
         data = self.scale(data)
 
         # -----------------------------------------------------------------------------
-        if n_samples is not None:
+        if n_samples is not None:  # relevant for the ablation study in Section 5
             # data = data[data.Label != 1].reset_index(drop=True)
             # data = data[data.Label != 2].reset_index(drop=True)
             # data = data[data.Label != 0].reset_index(drop=True)
@@ -218,8 +214,7 @@ class AdversarialUtilities(ThreatModel):
 
         x, y = data.iloc[:, :-1].values, data['Label'].values
         dataset = ClassifierDataset(torch.from_numpy(x).float(), torch.from_numpy(y).long())
-        data_loader = DataLoader(dataset=dataset,
-                                 batch_size=threat_model['batch_size'],
+        data_loader = DataLoader(dataset=dataset, batch_size=threat_model['batch_size'],
                                  shuffle=False)  # smaller batch size --> better adversarial attack
         # -----------------------------------------------------------------------------
         return model, data, data_loader, scaler, weights, encoder, perturbation_space, mask
@@ -243,7 +238,7 @@ class AdversarialUtilities(ThreatModel):
 
         return multiplicity[0], lower_bounds, upper_bounds
 
-    def clip_tensor(self, x_prime, bounds, scaler, true_label):
+    def clip_tensor(self, x_prime, bounds, scaler, true_label):  # input coherence
         lower_bounds = torch.tensor(np.array(bounds[0][true_label]))
         upper_bounds = torch.tensor(np.array(bounds[1][true_label]))
         lower_bounds = scaler.transform(lower_bounds)
@@ -259,21 +254,18 @@ class AdversarialUtilities(ThreatModel):
         x_prime_it = scaler.inverse_transform(x_prime_it)
         x_prime_it = np.round(x_prime_it, 3)  # cautionary measure
         x_prime_mult_it = x_prime_it.copy()
-
         rounding_indices = np.where([a and b for a, b in zip(multiplicity == 'discrete', mask == 1)])[0]
         x_prime_mult_it[:, rounding_indices] = np.round(x_prime_it[:, rounding_indices])
-
         x_prime_mult_it = scaler.transform(x_prime_mult_it)
         x_prime_mult_it = torch.tensor(x_prime_mult_it, dtype=torch.float32)
-
         latent_output = model(x_prime_mult_it)
         _, adv_pred = torch.max(torch.log_softmax(latent_output, dim=1), dim=1)
-
         # do not return multiplied where adv. prediction did not match target pred
         row_indices = np.where(adv_pred != target_pred)[0]
         x_prime_mult_it[row_indices, :] = x_prime[row_indices, :]
 
         return x_prime_mult_it
+
 
     def cicids_recompute_features(self, x_prime):
         x_prime = x_prime.squeeze(0)
