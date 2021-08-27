@@ -30,10 +30,8 @@ class Network(nn.Module):  # Define neural network
         self.layer_2 = nn.Linear(n_hidden, int(n_hidden / 2))
         self.layer_3 = nn.Linear(int(n_hidden / 2), int(n_hidden / 4))
         self.layer_out = nn.Linear(int(n_hidden / 4), num_class)
-
         self.relu = nn.ReLU()
         self.dropout = nn.Dropout(p=0.2)
-
         self.batchnorm_1 = nn.BatchNorm1d(n_hidden)
         self.batchnorm_2 = nn.BatchNorm1d(int(n_hidden / 2))
         self.batchnorm_3 = nn.BatchNorm1d(int(n_hidden / 4))
@@ -44,17 +42,14 @@ class Network(nn.Module):  # Define neural network
         x = self.batchnorm_1(x)
         x = self.relu(x)
         x = self.dropout(x)
-
         x = self.layer_2(x)
         x = self.batchnorm_2(x)
         x = self.relu(x)
         x = self.dropout(x)
-
         x = self.layer_3(x)
         x = self.batchnorm_3(x)
         x = self.relu(x)
         x = self.dropout(x)
-
         x = self.layer_out(x)
         return x
 
@@ -75,7 +70,7 @@ class ModelUtilities(CustomDataLoader):
         self.n_hidden = self.n_features * 2
 
     def train_val_test_split(self, train, test):
-
+        # Split dataset in train, validation and test sets.
         print('-- Splitting dataset in train test and validation sets... --')
         xtr, ytr = train.iloc[:, :-1], train['Label']
         xts, yts = test.iloc[:, :-1], test['Label']
@@ -93,7 +88,11 @@ class ModelUtilities(CustomDataLoader):
         return xtr, ytr, xvl, yvl, xts, yts
 
     def load_dn(self, scaled_flag=True):
-
+        '''
+        Prepater DataLoader object on dataset for trainig neural network
+        :param scaled_flag: if dataset has to be scaled
+        :return: DataLoader object
+        '''
         logging.info(f'**** Model Hyper parameters: *****')
         logging.info('_'*100)
         print('_'*100)
