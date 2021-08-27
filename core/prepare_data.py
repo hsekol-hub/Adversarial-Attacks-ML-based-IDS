@@ -1,8 +1,7 @@
+import os
 import glob
 import json
 import logging
-import os
-
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
@@ -16,11 +15,15 @@ class DataHandling(object):
     def __init__(self):
         pass
 
-
-    def drop_unique_cols(self, train, test, add_cols):
-        """
-        Drops unique columns from the pipeline; as they won't make any difference in model predictions
-        """
+    def drop_unique_cols(self, train, test, add_cols: list):
+        '''
+        Drops unique columns as a part of data-preprocessing; as they won't make any difference in model predictions.
+        Unique columns are automatically decided based on the logic below.
+        :param train: train set
+        :param test: test set
+        :param add_cols: any additional columns which need to be dropped. Needs to passed a an entry in list object
+        :return:
+        '''
 
         df = pd.concat([train, test])
         unique_cols = [col for col in df.columns if len(df[col].unique()) == 1]
@@ -34,7 +37,14 @@ class DataHandling(object):
         return train, test
 
 
-    def rename_class_labels(self, df, dataset):
+    def rename_class_labels(self, df, dataset: str):
+        '''
+        Preprocessing of class labels; some labels are binned under a common cluster of labels.
+        for CICDDoS: train & test sets had different naming conventions for nameing hte labels
+        :param df: whole dataset combined: pandas DataFrame()
+        :param dataset: name of the dataset
+        :return: clean dataframe
+        '''
 
         if dataset == 'CICDDoS':
             print('Class labels renamed for CICDDoS')
@@ -59,7 +69,6 @@ class DataHandling(object):
             df.Label = df.Label.replace('Infiltration', 'Others')
             df.Label = df.Label.replace('FTP-Patator', 'Patator')
             df.Label = df.Label.replace('SSH-Patator', 'Patator')
-
         return df
 
 
@@ -69,11 +78,20 @@ class FeatureEngineering(Directories):
         super().__init__(config)
         self.dhObj = DataHandling()
 
-    def sample_cicddos(self, path, tr_samples=60000, ts_samples=60000):
+    def _sample_cicddos(self, path: str, tr_samples: int, ts_samples: int):
+        '''
+        In CICDDoS undersampling was required as count of benign samples are limited to ~110K.
+        Equal number of samples for all other labels are picked from both sets.
+        :param path: directory of the raw files.
+        :param tr_samples: count of samples from training set.
+        :param ts_samples: count of samples from test set.
+        :return: None; saves the samples as individual <label_name>.csv files.
+        '''
 
         logging.info('+++++ Sampling CICDDoS2019 dataset +++++')
         print('+++++ Sampling CICDDoS2019 dataset +++++')
-        def helper_function(data, label, n_samples):  # Clean data for CICDDoS2019
+        def helper_function(data, label: str, n_samples: int):
+            # Clean data for CICDDoS2019 by removing negative entries.
             data.replace([np.inf, -np.inf], np.nan, inplace=True)
             data.dropna(inplace=True)
             data = data[data[' Fwd Header Length'] >= 0]
@@ -89,7 +107,6 @@ class FeatureEngineering(Directories):
                     data = data.sample(n=n_samples).reset_index(drop=True)
                     return data
 
-
         samples_path = os.path.join(path, 'samples')
         if not os.path.exists(samples_path):  # Create sample directory the first time
             os.makedirs(samples_path)
@@ -97,9 +114,8 @@ class FeatureEngineering(Directories):
             os.makedirs(os.path.join(samples_path, 'test'))
             logging.info('***** CICDDoS samples directory created for the first time *****')
 
-
-        class_labels = ['Benign', 'LDAP', 'MSSQL', 'NetBIOS', 'Syn', 'UDPLag',
-                        'UDP']  # Consider class labels present in both datasets
+        # Consider class labels present in both datasets
+        class_labels = ['Benign', 'LDAP', 'MSSQL', 'NetBIOS', 'Syn', 'UDPLag','UDP']
 
         for label in class_labels:
             print('Sampling on label: {}...'.format(label))
@@ -138,17 +154,15 @@ class FeatureEngineering(Directories):
         return train, test
 
 
-    def _cicddos(self, path, sample_data_flag, add_cols):
-        """
-        Reads sampled CICDDoS dataset and performs basic preprocessing steps
-        Args:
-            sample_flag: # if True samples from the raw dataset in defined ratios
-            path: directory path of raw data files
-            add_cols: additional columns to be dropped [dataset specific]
+    def _cicddos(self, path: str, sample_data_flag: bool, add_cols: list):
+        '''
+        Reads CICDDoS dataset and performs basic preprocessing steps.
 
-        Returns:
-
-        """
+        :param path: raw dataset directory path
+        :param sample_data_flag: if True samples from the raw dataset in defined ratios
+        :param add_cols: additional columns to be dropped [dataset specific]
+        :return: train and test sets.
+        '''
 
         def helper_function(pth):
             df = pd.DataFrame()  # holds records from all individual files as [train, test]
@@ -162,18 +176,22 @@ class FeatureEngineering(Directories):
             return df
 
         if sample_data_flag:
-            self.sample_cicddos(path, tr_samples=60000, ts_samples=60000)
+            self._sample_cicddos(path, tr_samples=60000, ts_samples=60000)
 
         tr_path = os.path.join(path, 'samples', 'train', '*csv')
         ts_path = os.path.join(path, 'samples', 'test', '*csv')
         train = helper_function(tr_path)
         test = helper_function(ts_path)
-
         train, test = self.dhObj.drop_unique_cols(train, test, add_cols)
-
         return train, test
 
-    def _cicids(self, path, add_cols):
+    def _cicids(self, path: str, add_cols: list):
+        '''
+        Reads CICIDS dataset and performs basic preprocessing steps.
+        :param path: raw dataset directory path
+        :param add_cols: additional columns to be dropped [dataset specific]
+        :return: train and test sets.
+        '''
 
         def helper_function(path):
             df = pd.DataFrame()
@@ -190,7 +208,6 @@ class FeatureEngineering(Directories):
             return df
 
         df = helper_function(path)
-
         Y = df.pop('Label').to_frame()
         X = df
         x_train, x_test, y_train, y_test = train_test_split(X, Y, stratify=Y, test_size=0.2)

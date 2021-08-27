@@ -12,6 +12,8 @@ from core.utils import Directories, DataLoader
 from core.prepare_data import FeatureEngineering
 from core.models.ids_models import train as train_ids_models
 from core.adv.adv_attacks import craft_ae
+from core.adv.plots import run as plot_ae
+
 
 # from core.adv.plots import Plots
 
@@ -43,7 +45,9 @@ flags.DEFINE_enum('model_config', 'config1', ['config1', 'config2', 'config3', '
 
 # --------------------------------- Adversarial Setting
 
-def today():  # Return DD-MM-YY as a string object
+def today() -> str:
+    #  used to create log filename based on timestamp
+    #  Return DD-MM-YY as a string object
     now = datetime.datetime.now()
     day, month, year = str(now.day), str(now.month), str(now.year)[2:]
     filename = day + '-' + month + '-' + year
@@ -51,7 +55,8 @@ def today():  # Return DD-MM-YY as a string object
 
 
 def set_logger():
-
+    # Override absl logging with base python logging module
+    # motivation is to custom create the filename of logs
     filename = today()
     absl.logging.use_python_logging()
     for handler in logging.root.handlers[:]:
@@ -69,7 +74,12 @@ def set_logger():
     print('-' * 20 + 'Dataset selected: ' + str(config['dataset']) + '-' * 20)
 
 
-def set_config():
+def set_config() -> dict:
+    '''
+    Create a configuration file for different classes and modules of the pipeline.
+    config: dict is modified based on *.yaml file in config directory and FLAGS from command-line arguments
+    :return: config as dictionary
+    '''
     ip_config_filepath = os.path.join(FLAGS.root_dir, 'config', FLAGS.ip_config)
     op_config_filepath = os.path.join(FLAGS.root_dir, 'config', 'tmp', FLAGS.op_config)
     with open(ip_config_filepath, 'r') as stream:
@@ -94,6 +104,7 @@ def set_config():
 
 
 def set_base_directories():
+    #  Ensures required base directories are available
     obj = Directories(config)
     obj.make_dirs()  # creates the base directories; if not present already
     obj.make_dirs(os.path.join(obj.results_dir, 'plots'))
@@ -104,7 +115,7 @@ def set_base_directories():
 def main(argv):
 
     FLAGS.dataset = 'NSL-KDD'
-    FLAGS.dataset = 'CICDDoS'
+    # FLAGS.dataset = 'CICDDoS'
     print('Arguments: {}\n{}'.format(argv, '_' * 120))
     global config
     # Order not to be altered
@@ -117,9 +128,13 @@ def main(argv):
         feObj.process_raw_data(sample_data_flag=FLAGS.sample_data,
                                save_plots_flag=True)
 
+    # train baseline ml-based ids models
     # train_ids_models(config, save_plots_flag=True)
-    craft_ae(config)
-
+    n_samples = None
+    # craft adversarial attacks
+    craft_ae(config, n_samples)
+    # plots on the adversarial set generated
+    plot_ae()
     return 0
 
 
