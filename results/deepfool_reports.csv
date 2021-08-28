@@ -1,0 +1,7 @@
+Dataset,#Samples,#Labels,Algorithm,Accuracy,Precision,Recall,F1 Score,Success Rate,Perturb distance,Perceptibility,Attack Score,Transfer Success,Capability,Setting,Labels
+NSL-KDD,1024,5,deepfool,0.0,0.0,0.0,0.0,1.0,0.572,-1,93.24,NA,"{'batch_size': 64, 'cor_weights': False, 'perturb_threshold_features': 0.05}","{'max_iters': 2000, 'alpha': 0.001, 'overshoot': 0.02, 'epsilon': 1e-05}",[0 3 1 2 4]
+NSL-KDD,1024,5,deepfool,0.0,0.0,0.0,0.0,1.0,0.572,-1,93.24,NA,"{'batch_size': 64, 'cor_weights': False, 'perturb_threshold_features': 0.05}","{'max_iters': 2000, 'alpha': 0.001, 'overshoot': 0.02, 'epsilon': 1e-05}",[0 3 1 2 4]
+NSL-KDD,1024,5,deepfool,0.0,0.0,0.0,0.0,1.0,0.572,-1,93.24,NA,"{'batch_size': 64, 'cor_weights': False, 'perturb_threshold_features': 0.05}","{'max_iters': 2000, 'alpha': 0.001, 'overshoot': 0.02, 'epsilon': 1e-05}",[0 3 1 2 4]
+NSL-KDD,1024,5,deepfool,0.0,0.0,0.0,0.0,1.0,0.572,-1,93.24,NA,"{'batch_size': 64, 'cor_weights': False, 'perturb_threshold_features': 0.05}","{'max_iters': 2000, 'alpha': 0.001, 'overshoot': 0.02, 'epsilon': 1e-05}",[0 3 1 2 4]
+NSL-KDD,1024,5,deepfool,0.0,0.0,0.0,0.0,1.0,0.572,-1,93.24,NA,"{'batch_size': 64, 'cor_weights': False, 'perturb_threshold_features': 0.05}","{'max_iters': 2000, 'alpha': 0.001, 'overshoot': 0.02, 'epsilon': 1e-05}",[0 3 1 2 4]
+NSL-KDD,,5,deepfool,0.0,0.0,0.0,0.0,1.0,0.578,-1,94.38,NA,"{'batch_size': 64, 'cor_weights': False, 'perturb_threshold_features': 0.05}","{'max_iters': 2000, 'alpha': 0.001, 'overshoot': 0.02, 'epsilon': 1e-05}",[0 3 1 2 4]
