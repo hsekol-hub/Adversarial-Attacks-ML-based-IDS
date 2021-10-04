@@ -114,8 +114,9 @@ def set_base_directories():
 
 def main(argv):
 
-    FLAGS.dataset = 'NSL-KDD'
+    # FLAGS.dataset = 'NSL-KDD'
     # FLAGS.dataset = 'CICDDoS'
+    FLAGS.dataset = 'CICIDS'
     print('Arguments: {}\n{}'.format(argv, '_' * 120))
     global config
     # Order not to be altered
@@ -130,11 +131,11 @@ def main(argv):
 
     # train baseline ml-based ids models
     # train_ids_models(config, save_plots_flag=True)
-    n_samples = None
+    n_samples = 2048
     # craft adversarial attacks
     craft_ae(config, n_samples)
     # plots on the adversarial set generated
-    plot_ae()
+    # plot_ae(3, 1)
     return 0
 
 

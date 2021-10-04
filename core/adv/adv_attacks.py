@@ -71,7 +71,7 @@ def craft_ae(config: dict, n_samples=None):  # main module to craft adversarial 
           '_________________________________\n'
           'Enter choice in the above range separated by space as delimiter:...\n')
     # selection = list(input())
-    selection = [1]
+    selection = [2]
     selection = list(reversed(sorted([int(c) for c in selection if c != ' '])))
     dict_ = {1: 'lowprofool',
              2: 'deepfool'}

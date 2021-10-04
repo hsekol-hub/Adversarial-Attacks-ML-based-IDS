@@ -170,7 +170,7 @@ class ThreatModel(ModelUtilities):
 
 
 class AdversarialUtilities(ThreatModel):
-    def __init__(self, config: ictd):
+    def __init__(self, config: dict):
         super().__init__(config)
         pass
         # self.threat_model, self.data = self.define()
