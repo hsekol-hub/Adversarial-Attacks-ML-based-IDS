@@ -2,7 +2,7 @@ adv_config:
   capability:
     batch_size: 64
     cor_weights: false
-    perturb_threshold_features: 0.05
+    perturb_threshold_features: 0.02
   deepfool:
     alpha: 0.001
     epsilon: 1.0e-05
@@ -12,16 +12,16 @@ adv_config:
   knowledge: test
   lowprofool:
     alpha: 0.01
-    lambda: 11.5
+    lambda: 4.5
     max_iters: 2000
-dataset: CICDDoS
+dataset: CICIDS
 dir_config:
   logs: /Users/sharma/PycharmProjects/Adversarial-Attacks-ML-based-IDS/logs
-  processed_data_dir: /Users/sharma/PycharmProjects/Adversarial-Attacks-ML-based-IDS/data/CICDDoS/processed
-  raw_data_dir: /Users/sharma/PycharmProjects/Adversarial-Attacks-ML-based-IDS/data/CICDDoS/raw
-  results: /Users/sharma/PycharmProjects/Adversarial-Attacks-ML-based-IDS/results/CICDDoS
+  processed_data_dir: /Users/sharma/PycharmProjects/Adversarial-Attacks-ML-based-IDS/data/CICIDS/processed
+  raw_data_dir: /Users/sharma/PycharmProjects/Adversarial-Attacks-ML-based-IDS/data/CICIDS/raw
+  results: /Users/sharma/PycharmProjects/Adversarial-Attacks-ML-based-IDS/results/CICIDS
   root_dir: /Users/sharma/PycharmProjects/Adversarial-Attacks-ML-based-IDS
-  utils: /Users/sharma/PycharmProjects/Adversarial-Attacks-ML-based-IDS/utils/CICDDoS
+  utils: /Users/sharma/PycharmProjects/Adversarial-Attacks-ML-based-IDS/utils/CICIDS
 model_config:
   batch_size: 256
   lr: 0.001

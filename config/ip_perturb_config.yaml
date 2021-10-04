@@ -7,16 +7,41 @@ NSL-KDD:
     - flag
     - hot
     - srv_rerror_rate
+    - num_root
   non_perturbed_features:
     - duration
+    - dst_host_same_srv_rate
+    - dst_bytes
+    - src_bytes
+    - num_file_creations
+    - su_attempted
+    - num_shells
 CICDDoS:
   functional_features:
     - SourcePort
     - DestinationPort
     - Protocol
-  non_perturbed_features: null
+  non_perturbed_features:
+    - SubflowFwdBytes
+    - PacketLengthVariance
+    - FlowDuration
+    - BwdPacketLengthMin
+    - act_data_pkt_fwd
+    - TotalBackwardPackets
+    - Init_Win_bytes_backward
+    - Init_Win_bytes_forward
+    - BwdIATTotal
+    - FlowIATMean
+    - TotalLengthofFwdPackets
+    - SubflowBwdPackets
+    - BwdHeaderLength
+    - ActiveMin
+
+
+
 CICIDS:
   functional_features: null
   non_perturbed_features: null
+
 
 ...

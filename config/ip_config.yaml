@@ -23,11 +23,11 @@ adv_config:  # Adversarial configuration
   capability:  # common for lowprofool and deepfool
     batch_size: 64  # prefer a very small batch size
     cor_weights: False  # if correlation weights to be used instead of random forest weights
-    perturb_threshold_features: 0.05
+    perturb_threshold_features: 0.02
   lowprofool:
     max_iters: 2000  # total number of iterations
     alpha: 0.01  # step size
-    lambda: 11.5  # trade-off factor
+    lambda: 4.5  # trade-off factor
   deepfool:
     max_iters: 2000  # total number of iterations
     alpha: 0.001  # step size
