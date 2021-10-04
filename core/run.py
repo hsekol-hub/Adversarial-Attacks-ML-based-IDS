@@ -35,8 +35,8 @@ flags.DEFINE_string('op_perturb_config', 'op_perturb_config.yaml',
 
 # --------------------------------- Dataset Processing
 flags.DEFINE_enum('dataset', 'NSL-KDD', ['NSL-KDD', 'CICDDoS', 'CICIDS'], "name of the dataset?")
-flags.DEFINE_boolean('preprocess_data', False, "preprocess the raw dataset?")
-flags.DEFINE_boolean('sample_data', False,
+flags.DEFINE_boolean('preprocess_data', True, "preprocess the raw dataset?")
+flags.DEFINE_boolean('sample_data', True,
                      "create new samples from raw dataset(ONLY in case of CICDDoS)")
 
 # --------------------------------- ML Models
@@ -114,9 +114,6 @@ def set_base_directories():
 
 def main(argv):
 
-    # FLAGS.dataset = 'NSL-KDD'
-    # FLAGS.dataset = 'CICDDoS'
-    FLAGS.dataset = 'CICIDS'
     print('Arguments: {}\n{}'.format(argv, '_' * 120))
     global config
     # Order not to be altered
@@ -130,12 +127,10 @@ def main(argv):
                                save_plots_flag=True)
 
     # train baseline ml-based ids models
-    # train_ids_models(config, save_plots_flag=True)
+    train_ids_models(config, save_plots_flag=True)
     n_samples = 2048
     # craft adversarial attacks
     craft_ae(config, n_samples)
-    # plots on the adversarial set generated
-    # plot_ae(3, 1)
     return 0
 
 
