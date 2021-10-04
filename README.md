@@ -13,8 +13,6 @@ large for an adversary, and constraints do not make a domain resilient.
 
 <img src="https://github.com/hsekol-hub/Adversarial-Attacks-ML-based-IDS/blob/main/config/tmp/pipeline.png" alt="pipeline" width="700" class="center">
 
-## Quick Start
-
 ### Environment variables & installations
 First, clone repository
 Install virtualenv
@@ -31,19 +29,26 @@ pip install -r requirement.txt
 ```
 
 ### Process data
-First, unzip and unpack the data files 
+Once the raw datasets are in data/<data-set name>
+Update the flags defined in run.py to perform the preprocessing steps. 
 
-
-### Train models
-Then the following commands can be used to train the proposed models. By default, dev set evaluation results will be printed when training terminates.
-
-
-### Evaluate models
-
+```
+cd core
+python run.py --dataset <name> --preprocess_data True -- sample_data False
+```
 
 ### Change the hyperparameters
-To get the optimal result reported in the paper, change the hyperparameters and other experiment set up according to Section 5.1.4 in the paper  
+To get the optimal result reported in the paper, change the hyperparameters and other experiment set up according to 
+Section 5.1.4 in the paper. 
+The configurations are defined in two .YAML files 
+1. config/ip_config.yaml
+2. ip_perturb_config.yaml
+
+### Evaluate models
+Then the following commands can be used to train the proposed models and craft adversarial examples.
+1. Once the run.py file is executed the console promots user to train a specific ML model.
+2. Similarly attack algorithms are prompted.
 
 
 ## Citation
-If you find the resource in this repository helpful, please cite
+If you find the resource in this repository helpful, please cite TBA
