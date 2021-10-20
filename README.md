@@ -1,4 +1,4 @@
-# Adversarial Attacks on ML-based Intrusion Detection Systems
+# Adversarial Attacks on ML-based Intrusion Detection
 This is the official code release of the following paper: 
 
 Machine learning is a widely used methodology for anomaly detection in most
